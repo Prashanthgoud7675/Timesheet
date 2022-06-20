@@ -31,9 +31,12 @@ class LoginController extends Controller
         }
         switch (Auth::user()->role){
             case 1:
-               return redirect('/admin');
+                return redirect('/superadmin');
                 break;
             case 2:
+               return redirect('/admin');
+                break;
+            case 3:
                 return redirect('/user');
                 break;
          

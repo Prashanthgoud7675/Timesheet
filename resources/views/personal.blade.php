@@ -673,7 +673,7 @@
 
                                 <div class="col">
                                     <div class=" form-floating mb-4">
-                                        <input type="text" class="form-control" id="floatingInput" placeholder=" CTC"
+                                        <input type="text" class="form-control" id="ctc" placeholder=" CTC"
                                             style="padding-top:16%; font-size:15px">
                                         <label for="floatingInput">CTC*</label>
                                     </div>
@@ -687,7 +687,12 @@
                                     </div>
                                 </div>
 
+
+                               
+
                             </div>
+
+                            <button class="btn btn-success active" type="button" id="myBtn" style="width:100px; height:45px; margin-left:2%">Get Value</button>
 
                         </div>
 
@@ -711,7 +716,7 @@
 
                                         <div class="col">
                                             <div class=" form-floating mb-4">
-                                                <input type="text" class="form-control" id="floatingInput"
+                                                <input type="text" class="form-control" id="basic"
                                                     placeholder="Basic Salary" style="padding-top:16%; font-size:15px">
                                                 <label for="floatingInput">Basic Salary*</label>
                                             </div>
@@ -719,7 +724,7 @@
 
                                         <div class="col">
                                             <div class=" form-floating mb-4">
-                                                <input type="text" class="form-control" id="floatingInput"
+                                                <input type="text" class="form-control" id="hra"
                                                     placeholder="HRA" style="padding-top:16%; font-size:15px">
                                                 <label for="floatingInput">HRA*</label>
                                             </div>
@@ -732,7 +737,7 @@
 
                                         <div class="col">
                                             <div class=" form-floating mb-4">
-                                                <input type="text" class="form-control" id="floatingInput"
+                                                <input type="text" class="form-control" id="conveyance"
                                                     placeholder=" Conveyance" style="padding-top:16%; font-size:15px">
                                                 <label for="floatingInput">Conveyance*</label>
                                             </div>
@@ -740,7 +745,7 @@
 
                                         <div class="col">
                                             <div class=" form-floating mb-4">
-                                                <input type="text" class="form-control" id="floatingInput"
+                                                <input type="text" class="form-control" id="medicalAllowance"
                                                     placeholder="Medical Allowance"
                                                     style="padding-top:16%; font-size:15px">
                                                 <label for="floatingInput">Medical Allowance*</label>
@@ -811,7 +816,7 @@
 
                                         <div class="col">
                                             <div class=" form-floating mb-4">
-                                                <input type="text" class="form-control" id="floatingInput"
+                                                <input type="text" class="form-control" id="epf"
                                                     placeholder="EPF" style="padding-top:16%; font-size:15px">
                                                 <label for="floatingInput">EPF*</label>
                                             </div>
@@ -863,7 +868,7 @@
 
                                 <div class="col">
                                     <div class=" form-floating mb-4">
-                                        <input type="text" class="form-control" id="floatingInput"
+                                        <input type="text" class="form-control" id="gross"
                                             placeholder="Gross Pay" style="padding-top:16%; font-size:15px">
                                         <label for="floatingInput">Gross Pay*</label>
                                     </div>
@@ -871,7 +876,7 @@
 
                                 <div class="col">
                                     <div class=" form-floating mb-4">
-                                        <input type="text" class="form-control" id="floatingInput" placeholder="Net Pay"
+                                        <input type="text" class="form-control" id="net" placeholder="Net Pay"
                                             style="padding-top:16%; font-size:15px">
                                         <label for="floatingInput">Net Pay*</label>
                                     </div>
@@ -1111,4 +1116,120 @@ function updateProgressbar() {
     progress.style.width =
         ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
 }
+</script>
+
+<script>
+
+    
+var btn = document.getElementById("myBtn");
+
+btn.addEventListener("click", netOne);
+btn.addEventListener("click", netTwo);
+btn.addEventListener("click", netThree);
+btn.addEventListener("click", netFour);
+btn.addEventListener("click", netFive);
+
+
+
+ function netOne(){
+            
+ var inputVal = document.getElementById("ctc").value;
+
+ const percent = 40;
+
+ const net = Math.floor((percent/100 * inputVal)/12);
+
+ const head = document.getElementById('basic').value = net;
+
+    
+ document.body.appendChild(head);
+  
+
+  
+        }
+
+    
+
+function netTwo() {
+
+  var inputVal = document.getElementById("basic").value;
+
+  const percent = 40;
+
+const net = Math.floor(((percent/100) * inputVal));
+
+const head = document.getElementById('hra').value = net;
+
+
+  
+
+   document.body.appendChild(head);
+  
+}   
+
+function netThree() {
+
+var inputVal = document.getElementById("basic").value;
+
+const percent = 12;
+
+const net = Math.floor(((percent/100) * inputVal));
+
+const head = document.getElementById('epf').value = net;
+
+
+
+
+ document.body.appendChild(head);
+
+}  
+
+const conveyance = document.getElementById('conveyance').value = 1600;
+
+const medicalAllowance = document.getElementById('medicalAllowance').value = 1250;
+
+
+
+function netFour() {
+
+    var inputVal = document.getElementById("ctc").value;
+    
+    const percent = 12;
+    
+    const net = Math.floor(( inputVal/12));
+    
+    const head = document.getElementById('gross').value = net;
+    
+    
+    
+    
+     document.body.appendChild(head);
+    
+    } 
+    
+    
+    function netFive() {
+    
+    const basic = parseInt(document.getElementById("basic").value);
+    const hra = parseInt(document.getElementById("hra").value);
+    const conveyance = parseInt(document.getElementById("conveyance").value);
+    const medicalAllowance = parseInt(document.getElementById("medicalAllowance").value);
+    
+    const epf = parseInt(document.getElementById("epf").value);
+    
+    
+    
+    const net = ((basic + hra + conveyance + medicalAllowance) - epf);
+    
+    const head = document.getElementById('net').value = net;
+    
+    
+    
+    
+     document.body.appendChild(head);
+    
+    } 
+    
+    
+        
 </script>

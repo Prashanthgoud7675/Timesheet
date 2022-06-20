@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string(column: 'Branch_Code');
             $table->string(column: 'Company_Name');
             $table->string(column: 'Company_Address');
-            $table->date(column: 'Next_Check_Date');
+            $table->date(column: 'Next_Check_Date')->nullable();
             $table->string(column: 'Status')->nullable;
             $table->timestamps();
         });

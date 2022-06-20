@@ -7,12 +7,14 @@ use App\Http\Controllers\WelcomeController;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\ManagerController;
+use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\UserController;
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LogoutController;
+
+use App\Http\Controllers\CustomSearchController;
 
 
 /*
@@ -25,6 +27,8 @@ use App\Http\Controllers\LogoutController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::resource('customsearch', CustomSearchController::class);
 
 Route::get('welcome', function () {
     return view('welcome');
@@ -86,3 +90,4 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin')->middleware('auth');
 Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('user')->middleware('auth');
+Route::get('/superadmin', [App\Http\Controllers\SuperAdminController::class, 'index'])->name('superadmin')->middleware('auth');

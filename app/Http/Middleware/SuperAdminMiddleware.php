@@ -22,11 +22,11 @@ class Admin
         }
 
         if(Auth::user()->role == 1){
-            return redirect()->route('superadmin');
+            return $next($request);
         }
 
         if(Auth::user()->role == 2){
-            return $next($request);
+            return redirect()->route('admin');
         }
 
         if(Auth::user()->role == 3){

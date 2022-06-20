@@ -23,10 +23,15 @@ class User
 
         if(Auth::user()->role == 1){
            
-            return redirect()->route('admin');
+            return redirect()->route('superadmin');
         }
 
         if(Auth::user()->role == 2){
+           
+            return redirect()->route('admin');
+        }
+
+        if(Auth::user()->role == 3){
            
             return $next($request);
         }

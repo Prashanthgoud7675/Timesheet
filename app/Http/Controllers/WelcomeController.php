@@ -23,10 +23,7 @@ class WelcomeController extends Controller
 
             }
         }]
-    ])
-
-           ->orderBy("id" , "desc")
-           ->paginate(10);
+    ]);
 
 
            
