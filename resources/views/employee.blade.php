@@ -38,32 +38,65 @@
 <body style="background-color:whitesmoke">
 
     <section style="background-color:#002F6C;">
-        <nav class="navbar navbar-expand-lg  navbar-light fixed-top" style="background-color: #002F6C;">
-            <div class="container">
+
+        <nav class="navbar navbar-expand-lg  navbar-light fixed-top" style="background-color: #002F6C;height:50px">
+            <div class="container" style="margin-top:2%">
                 <a href="#">
                     <img src="https://xsilica.com/images/xsilica_broucher_final_modified_05082016-2.png" alt="logo"
-                        height="70px" width="200px" style="margin-left: 0%">
+                        height="70px" width="200px" style="margin-left: -10%">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"
                     style="color:white; background-color:white">
                     <span class="navbar-toggler-icon" style="color:white; background-color:white"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navmenu" style="margin-left: 7%;">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
+                <div class="collapse navbar-collapse" id="navmenu" style="margin-left: 10%;">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item" ght: 200;">
 
                             <input type="text" name="term" placeholder="Find answers, pages, reports and more" id="term"
-                                style="height:40px;width:320px;background-color: whitesmoke;border-radius: 8px; margin-top:4%">
+                                style="height:40px;width:400px;background-color: whitesmoke;border-radius: 8px;padding:10px">
 
                         </li>
-                    </ul>
+                        @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
 
-
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item-active ">
-                            <a> <i class="fa fa-user-circle-o "
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
+                        <li class="nav-item-active " style=" margin-left: 45%">
+                            <a> <i class="fa fa-user-circle-o"
                                     style="color: rgb(212, 212, 215); font-size: 35px"></i></a>
                         </li>
+                            <li class="nav-item dropdown" style="margin-left: 25%">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="color:white;">
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown" >
+                                    <a class="dropdown-item" href="{{ route('logout') }}" 
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();" >
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none" >
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+
+                            
+                        @endguest
+
+                        
+                       
 
 
                     </ul>
@@ -71,6 +104,10 @@
             </div>
 
         </nav>
+
+        <br>
+        <br>
+  
 
         <hr style="width: 88%; margin-left: 5%">
 
@@ -88,27 +125,8 @@
         </a>
 
 
-        <select style="background-color:#002F6C; color:white;margin-top:2%; margin-bottom:2%; margin-left:2%; border:none">
-            <option value="Company List">Company</option>
-        </select>
-
-
-        <select style="background-color:#002F6C; color:white;margin-top:2%; margin-bottom:2%; margin-left:2%; border:none">
-            <option value="Company List">Reports</option>
-        </select>
-        <select style="background-color:#002F6C; color:white;margin-top:2%; margin-bottom:2%; margin-left:2%; border:none">
-            <option value="Company List">Taxes</option>
-        </select>
-        <select style="background-color:#002F6C; color:white;margin-top:2%; margin-bottom:2%; margin-left:2%; border:none">
-            <option value="Company List">Time</option>
-        </select>
-        <select style="background-color:#002F6C; color:white;margin-top:2%; margin-bottom:2%; margin-left:2%; border:none">
-            <option value="Company List">General Ledger</option>
-        </select>
-        <select style="background-color:#002F6C; color:white;margin-top:2%; margin-bottom:2%; margin-left:2%; border:none">
-            <option value="Company List">Insurance</option>
-        </select>
-
+        <br>
+        <br>
 
 
 
@@ -131,7 +149,7 @@
             <label for="" style="margin-left: 2%">Sort by: </label>
 
             <select style="background-color:whitesmoke;  margin-left:6%; width:50%;font-size:20px; font-weight:600; border-radius:8px;padding-top:8px; padding-bottom:8px">
-              <option value="" >Last Name</option>
+              <option value="" >Name</option>
               <option value="" ></option>
           </select>
 
@@ -187,76 +205,26 @@
                         </tr>
                     </thead>
                     <tbody>
+                       
+                        @forelse ($data as $i)
+                  
+               
                         <tr>
-
-                            <td style="padding:10px"><span
-                                    style="background-color:#002F6C;border-radius:50%;padding:10px;margin-right:5%;color:white;margin-top:3%">MB</span>Beerpur,Mamatha
-                            </td>
-                            <td style="padding:10px">Not Registered</td>
-                            <td style="padding:10px">payroll<br>W-2</td>
-                            <td style="padding:10px">mamatha@gmail.com</td>
-                            <td style="padding:10px">Employee<br>Full|time|salary</td>
-                            <td style="padding:10px"><span
-                                    style="background-color:#C8E5D6;border-radius:30%;padding:10px;color:black;">Active</span>
-                            </td>
-                            <td style="padding:10px"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></td>
+                         
+                          <td style="font-size:17px; color:rgb(133, 125, 125)">{{$i->Last_Name}},{{$i->First_Name}}</td>
+                          <td style="font-size:17px; color:rgb(133, 125, 125)">{{$i->Registration}}</td>
+                          <td style=" font-size:17px; color:rgb(133, 125, 125)"> {{$i->Paperless}}</td>
+                          <td style="font-size:17px; color:rgb(133, 125, 125)">{{$i->contact_info}}</td>
+                          <td style="font-size:17px; color:rgb(133, 125, 125)">{{$i->employment_type}}</td>
+                          <td style="font-size:17px; color:rgb(133, 125, 125)">{{$i->Status}}</td>
                         </tr>
-                        <tr>
-
-                            <td style="padding:10px"><span
-                                    style="background-color:#002F6C;border-radius:50%;padding:10px;margin-right:5%;color:white">CT</span>Chandupatla,Tejaswini
-                            </td>
-                            <td style="padding:10px">Registered</td>
-                            <td style="padding:10px">payroll<br>W-2</td>
-                            <td style="padding:10px">tejaswi@gmail.com</td>
-                            <td style="padding:10px">Employee<br>Full|time|salary</td>
-                            <td style="padding:10px"><span
-                                    style="background-color:#C8E5D6;border-radius:30%;padding:10px;color:black;">Active</span>
-                            </td>
-                            <td style="padding:10px"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></td>
-                        </tr>
-                        <tr>
-
-                            <td style="padding:10px"><span
-                                    style="background-color:#002F6C;border-radius:50%;padding:10px;margin-right:5%;color:white">GD</span>Gaddam,Dhiraj
-                                kumar</td>
-                            <td style="padding:10px">Not registered</td>
-                            <td style="padding:10px">payroll<br>w-3</td>
-                            <td style="padding:10px">deeraj@gmail.com</td>
-                            <td style="padding:10px">Employee<br>Full|time|salary</td>
-                            <td style="padding:10px"><span
-                                    style="background-color:#C8E5D6;border-radius:30%;padding:10px;color:black;">Active</span>
-                            </td>
-                            <td style="padding:10px"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></td>
-                        </tr>
-                        <tr>
-
-                            <td style="padding:10px"><span
-                                    style="background-color:#002F6C;border-radius:50%;padding:10px;margin-right:5%;color:white">KS</span>Kachapuram,Sai
-                                krishna</td>
-                            <td style="padding:10px">Registered</td>
-                            <td style="padding:10px">payroll<br>W-2</td>
-                            <td style="padding:10px">saikrishna@gmail.com</td>
-                            <td style="padding:10px">Employee<br>Full|time|salary</td>
-                            <td style="padding:10px"><span
-                                    style="background-color:#C8E5D6;border-radius:30%;padding:10px;color:black;">Active</span>
-                            </td>
-                            <td style="padding:10px"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></td>
-                        </tr>
-                        <tr>
-
-                            <td style="padding:10px"><span
-                                    style="background-color:#002F6C;border-radius:50%;padding:10px;margin-right:5%;color:white">RN</span>Rathore,Nitu
-                            </td>
-                            <td style="padding:10px">Registered</td>
-                            <td style="padding:10px">payroll</td>
-                            <td style="padding:10px">niturathod@gmail.com</td>
-                            <td style="padding:10px">Employee</td>
-                            <td style="padding:10px"><span
-                                    style="background-color:#C8E5D6;border-radius:30%;padding:10px;color:black;">Active</span>
-                            </td>
-                            <td style="padding:10px"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></td>
-                        </tr>
+                        @empty
+        
+        
+                        <p style="margin-left: 10%; font-size:17px; font-weight:600; "> No Data Found</p>
+        
+                        @endforelse
+                       
                     </tbody>
                 </table>
             </div>

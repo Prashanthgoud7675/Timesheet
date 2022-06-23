@@ -29,7 +29,7 @@ class RegisterController extends Controller
         $this->validate($request, [
 
             'name' => 'required|max:150',
-            'username' => 'required|max:150',
+            'Companyname' => 'required|max:150',
             'email' => 'required|email|max:150',
             
             'password' => 'required|confirmed'
@@ -37,7 +37,7 @@ class RegisterController extends Controller
 
         user::create([
             'name' =>$request->name,
-            'username' =>$request->username,
+            'Companyname' =>$request->Companyname,
             'email' =>$request->email,
         
             'password' =>Hash::make($request->password)

@@ -13,13 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('emp_contract_employment_info', function (Blueprint $table) {
+        Schema::create('employementforms', function (Blueprint $table) {
             $table->id();
-            $table->string('Work_phone')->nullable();
-            $table->string('Ext')->nullable();
-            $table->string('Work_email')->unique();
-            $table->date('Hire_date');
-            $table->string('Status')->nullable();
+            $table->string('workmobilenumber');
+            $table->string('workemail');
+            $table->date('hireddate');
+            $table->string('employeeid');
+            $table->string('designation');
+            $table->string('department');
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('emp_contract_employment_info');
+        Schema::dropIfExists('employementforms');
     }
 };

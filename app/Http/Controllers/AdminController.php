@@ -3,45 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
-use Illuminate\support\Facades\Input;
-use App\Models\Welcome;
+
+use App\Models\Company;
 
 class AdminController extends Controller
 {
 
     function index(Request $request)
     {
-      
-     if(request()->ajax())
-     {
-      if(!empty($request->filter_country))
-      {
-       $data = DB::table('companies')
-        
-         ->where('Company_Name', $request->filter_country)
-         
-         ->get();
-      }
-      else
-      {
-       $data = DB::table('companies')
-
-         ->get();
-      }
-      return datatables()->of($data)->make(true);
-     }
-
-     $company_name = DB::table('companies')
-     ->select('Company_Name')
-     ->groupBy('Company_Name')
-     ->orderBy('Company_Name', 'ASC')
-     ->get();
-  
-     return view('admin.index', compact('company_name'));
 
 
-     $data = DB::table('companies')->where([
+     $data = Company::where([
         ['Client_ID' , '!=' , Null],
         ['Company_Name' , '!=' , Null],
         [function ($query) use ($request){
@@ -53,8 +25,8 @@ class AdminController extends Controller
         }]
     ])
   
-           ->orderBy("id" , "desc")
-           ->paginate(10);
+           ->orderBy("id")
+           ->paginate(100);
   
   
            

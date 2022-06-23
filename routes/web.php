@@ -15,6 +15,9 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LogoutController;
 
 use App\Http\Controllers\CustomSearchController;
+use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\EmployeeformController;
+use App\Http\Controllers\EmployeController;
 
 
 /*
@@ -28,11 +31,9 @@ use App\Http\Controllers\CustomSearchController;
 |
 */
 
-Route::resource('customsearch', CustomSearchController::class);
 
-Route::get('welcome', function () {
-    return view('welcome');
-});
+
+
 
 
 
@@ -68,7 +69,9 @@ Route::get('personal', function () {
     return view('personal');
 });
 
-Route::get('welcome',[WelcomeController::class, 'index']);
+Route::get('/employee', [EmployeController::class, 'index']);
+
+
 
 Route::get('login',[AdminController::class, 'index']);
 
@@ -91,3 +94,8 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin')->middleware('auth');
 Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('user')->middleware('auth');
 Route::get('/superadmin', [App\Http\Controllers\SuperAdminController::class, 'index'])->name('superadmin')->middleware('auth');
+
+
+Route::resource('/companies', CompanyController::class);
+
+Route::resource('/form', EmployeeformController::class);

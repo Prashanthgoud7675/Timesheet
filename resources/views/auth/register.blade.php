@@ -77,12 +77,12 @@
 
 
                     <div class="mb-4">
-                        <label for="username" class="sr-only">Company Name</label>
-                        <input type="text" name="username" id="username" placeholder="Company Name"
-                            class="bg-gray-100 border-2 w-full p-2 rounded-lg @error('Company Name') border-red-500 @enderror"
-                            value="{{ old('Company Name') }}">
+                        <label for="Companyname" class="sr-only">Company Name</label>
+                        <input type="text" name="Companyname" id="username" placeholder="Company Name"
+                            class="bg-gray-100 border-2 w-full p-2 rounded-lg @error('Companyname') border-red-500 @enderror"
+                            value="{{ old('Companyname') }}">
 
-                        @error('Company Name')
+                        @error('Companyname')
                             <div class="text-red-500 mt-2 text-sm">
                                 {{ $message }}
                             </div>
@@ -106,7 +106,7 @@
 
                     <div class="mb-4">
                         <label for="password" class="sr-only">Password</label>
-                        <input type="password" name="password" id="password" placeholder="choose a password"
+                        <input type="password" name="password" id="password" placeholder="Choose a password"
                             class="bg-gray-100 border-2 w-full p-2 rounded-lg @error('password') border-red-500 @enderror"
                             value="">
 

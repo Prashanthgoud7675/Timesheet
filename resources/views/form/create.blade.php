@@ -30,8 +30,10 @@
 
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&family=Montserrat:wght@500&family=Quintessential&family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&family=Montserrat:wght@500&family=Quintessential&family=Ubuntu+Mono&display=swap"
+        rel="stylesheet">
 
     <link rel="shortcut icon" type="image/jpg"
         href="https://xsilica.com/images/xsilica_broucher_final_modified_05082016-2.png" />
@@ -42,137 +44,137 @@
     <title>Attune Global</title>
 
     <style>
-    label {
-        display: block;
-        margin-bottom: 0.5rem;
-    }
-
-    input {
-        display: block;
-        width: 100%;
-        padding: 0.75rem;
-        border: 1px solid #ccc;
-        border-radius: 0.25rem;
-    }
-
-    .width-50 {
-        width: 50%;
-    }
-
-    .ml-auto {
-        margin-left: auto;
-    }
-
-    .text-center {
-        text-align: center;
-    }
-
-    /* Progressbar */
-    .progressbar {
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        counter-reset: step;
-        margin: 2rem 5rem 4rem;
-    }
-
-    .progressbar::before,
-    .progress {
-        content: "";
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        height: 4px;
-        width: 100%;
-        background-color: rgb(43, 31, 31);
-        z-index: -1;
-    }
-
-    .progress {
-        background-color: bisque;
-        width: 0%;
-        transition: 0.3s;
-    }
-
-    .progress-step {
-        width: 2.1875rem;
-        height: 2.1875rem;
-        background-color: rgb(169, 169, 251);
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-    }
-
-    .progress-step::before {
-        counter-increment: step;
-        content: counter(step);
-    }
-
-    .progress-step::after {
-        content: attr(data-title);
-        position: absolute;
-        top: calc(100% + 0.5rem);
-        font-size: 0.85rem;
-        color: #666;
-    }
-
-    .progress-step-active {
-        background-color: rgb(101, 75, 75);
-        color: white;
-    }
-
-
-
-    .form-step {
-        display: none;
-        transform-origin: top;
-        animation: animate 0.5s;
-    }
-
-    .form-step-active {
-        display: block;
-    }
-
-    .input-group {
-        margin: 2rem 0;
-    }
-
-    @keyframes animate {
-        from {
-            transform: scale(1, 0);
-            opacity: 0;
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
         }
 
-        to {
-            transform: scale(1, 1);
-            opacity: 1;
+        input {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 0.25rem;
         }
-    }
 
-    /* Button */
-    .btns-group {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
+        .width-50 {
+            width: 50%;
+        }
 
-    .btn {
-        padding: 0.75rem;
-        display: block;
-        text-decoration: none;
-        background-color: var(--primary-color);
-        color: #f3f3f3;
-        text-align: center;
-        border-radius: 0.25rem;
-        cursor: pointer;
-        transition: 0.3s;
-    }
+        .ml-auto {
+            margin-left: auto;
+        }
 
-    .btn:hover {
-        box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
-    }
+        .text-center {
+            text-align: center;
+        }
+
+        /* Progressbar */
+        .progressbar {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            counter-reset: step;
+            margin: 2rem 5rem 4rem;
+        }
+
+        .progressbar::before,
+        .progress {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 4px;
+            width: 100%;
+            background-color: rgb(43, 31, 31);
+            z-index: -1;
+        }
+
+        .progress {
+            background-color: bisque;
+            width: 0%;
+            transition: 0.3s;
+        }
+
+        .progress-step {
+            width: 2.1875rem;
+            height: 2.1875rem;
+            background-color: rgb(169, 169, 251);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .progress-step::before {
+            counter-increment: step;
+            content: counter(step);
+        }
+
+        .progress-step::after {
+            content: attr(data-title);
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .progress-step-active {
+            background-color: rgb(101, 75, 75);
+            color: white;
+        }
+
+
+
+        .form-step {
+            display: none;
+            transform-origin: top;
+            animation: animate 0.5s;
+        }
+
+        .form-step-active {
+            display: block;
+        }
+
+        .input-group {
+            margin: 2rem 0;
+        }
+
+        @keyframes animate {
+            from {
+                transform: scale(1, 0);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1, 1);
+                opacity: 1;
+            }
+        }
+
+        /* Button */
+        .btns-group {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .btn {
+            padding: 0.75rem;
+            display: block;
+            text-decoration: none;
+            background-color: var(--primary-color);
+            color: #f3f3f3;
+            text-align: center;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
+        }
     </style>
 </head>
 
@@ -206,12 +208,13 @@
                     <div class="progress" id="progress"></div>
 
 
-                    <div class="progress-step  progress-step-active" data-title="Personal info" ></div>
-                    <div class="progress-step" data-title="Direct deposit" ></div>
-                    <div class="progress-step" data-title="Employment info"></div>
-                    <div class="progress-step" data-title="payroll info"></div>
-                    <div class="progress-step" data-title="Tax info"></div>
-                    <div class="progress-step" data-title="Review and complete"></div>
+                    <div class="progress-step  progress-step-active" data-title="Personal info"></div>
+                    <div class="progress-step" data-title="Direct deposit"></div>
+                    <div class="progress-step" data-title="Employement Info"></div>
+                    <div class="progress-step" data-title="Patroll Info"></div>
+                    <div class="progress-step" data-title="Tax Info"></div>
+
+
                 </div>
             </div>
         </div>
@@ -223,13 +226,13 @@
             <div class="col-md-6"
                 style="background-color: white; box-shadow: 0px 10px 50px rgba(180, 174, 174, 0.7); border-radius:10px">
 
-                <form action="#" class="form" style="margin-top: 7%; margin-bottom:7%;margin-left:3%">
+                <form action="{{ route('form.store') }}" method="POST"
+                    style="margin-top: 7%; margin-bottom:7%;margin-left:3%">
 
-
+                    @csrf
 
 
                     <div class="form-step form-step-active">
-
 
 
                         <h1 style="font-size:20px;font-weight:700">Personal Info</h1>
@@ -238,55 +241,50 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-floating mb-3">
-                                        <input type="name" class="form-control" id="floatingInput" placeholder="name"
-                                            style="padding-top:16%; font-size:15px">
-                                        <label for="floatingInput">First Name</label>
+
+                                        <input type="name" class="form-control" id="FirstName" placeholder="first"
+                                            name="first" style="padding-top:16%; font-size:15px">
+                                        <label for="first">First Name</label>
                                     </div>
                                 </div>
 
                                 <div class="col">
                                     <div class="form-floating  mb-4">
-                                        <input type="name" class="form-control" id="floatingInput" placeholder="name"
-                                            style="padding-top:16%; font-size:15px;margin-left:-6%">
-                                        <label for="floatingInput">Last Name</label>
+                                        <input type="name" class="form-control" id="last" placeholder="last"
+                                            name="last" style="padding-top:16%; font-size:15px;margin-left:-6%">
+                                        <label for="last">Last Name</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
 
                         <div class="form-floating mb-4">
-                            <input type="name" class="form-control" id="floatingInput" placeholder="name"
+                            <input type="name" class="form-control" id="father" placeholder="name" name="father"
                                 style="width:417px; padding-top:30px; font-size:15px">
-                            <label for="floatingInput">Father's Name</label>
+                            <label for="father">Father's Name</label>
                         </div>
-
-
-
 
                         <div style="display:flex;">
                             <div class="row">
                                 <div class="col">
                                     <div class="form-floating mb-4">
-                                        <input type="date" class="form-control" id="floatingInput"
-                                            placeholder="date of birth"
+                                        <input type="date" class="form-control" id="Date of birth"
+                                            placeholder="date of birth" name="dob"
                                             style=" width:200px;padding-top:16%; font-size:15px">
-                                        <label for="floatingInput">Date of birth</label>
+                                        <label for="Date of birth">Date of birth</label>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-floating mb-4">
-                                        <select class="form-select" id="floatingSelect"
-                                            aria-label="Floating label select example"
-                                            style=" width:200px; font-size:11px; padding-top:8%; margin-left:-6%">
+                                        <select class="form-select" id="Gender"
+                                            aria-label="Floating label select example" name="gender"
+                                            style=" width:200px;  padding-top:7%; font-size:13px;margin-left:-6%">
 
-                                            <option value="" style="font-size: 11px">Choose..</option>
-
-                                            <option value="Male" style="font-size: 11px">Male</option>
-                                            <option value="Female" style="font-size: 11px">Female</option>
+                                            <option value="Male" style="font-size: 15px">Male</option>
+                                            <option value="Female" style="font-size: 15px">Female</option>
 
                                         </select>
-                                        <label for="floatingSelect">Gender</label>
+                                        <label for="Gender">Gender</label>
                                     </div>
                                 </div>
 
@@ -294,27 +292,29 @@
 
                             </div>
                         </div>
+
                         <div style="display:flex;">
                             <div class="row">
                                 <div class="col">
                                     <div class="form-floating mb-4">
-                                        <input type="name" class="form-control" id="floatingInput"
-                                            placeholder="Aadhar no"
+                                        <input type="name" class="form-control" id="aadhar"
+                                            placeholder="Aadhar no" name="aadhar"
                                             style="padding-top:16%; font-size:15px">
-                                        <label for="floatingInput">Aadhar Number</label>
+                                        <label for="AadhaarNumber">Aadhar Number</label>
                                     </div>
                                 </div>
 
                                 <div class="col">
                                     <div class="form-floating  mb-4">
-                                        <input type="PAN Number" class="form-control" id="floatingInput"
-                                            placeholder="PAN Number"
+                                        <input type="PAN Number" class="form-control" id="pan"
+                                            placeholder="PAN Number" name="pan"
                                             style="padding-top:16%; font-size:15px;margin-left:-6%">
-                                        <label for="floatingInput">PAN Number</label>
+                                        <label for="PAN number">PAN Number</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                         <h1 style="font-size:20px;font-weight:700"> Home Address</h1>
                         <br>
                         <p>Make sure the address is correct, in case you need to mail one of these documents to the
@@ -326,36 +326,37 @@
 
                         <div>
                             <div class="form-floating mb-4">
-                                <input type="text" class="form-control" id="floatingInput"
-                                    placeholder="Flat no/Bulding Name"
+                                <input type="text" class="form-control" id="flatno"
+                                    placeholder="Flat no/Bulding Name" name="flatno"
                                     style="width: 417px;padding-top:30px; font-size:15px">
-                                <label for="floatingInput">Flat no/Bulding Name</label>
+                                <label for="Flatno">Flat no/Bulding Name</label>
                             </div>
                         </div>
 
 
                         <div class="form-floating mb-4">
-                            <input type="pincode" class="form-control" id="floatingInput"
-                                placeholder="Locality/Area/Street"
+                            <input type="pincode" class="form-control" id="locality"
+                                placeholder="Locality/Area/Street" name="locality"
                                 style="width:417px; padding-top:30px; font-size:15px">
-                            <label for="floatingInput">Locality/Area/Street</label>
+                            <label for="Locality">Locality/Area/Street</label>
                         </div>
 
                         <div style="display:flex;">
                             <div class="row">
                                 <div class="col">
                                     <div class="form-floating mb-4">
-                                        <input type="text" class="form-control" id="floatingInput" placeholder="City"
-                                            style="padding-top:16%; font-size:15px">
-                                        <label for="floatingInput">City</label>
+                                        <input type="text" class="form-control" id="city" placeholder="City"
+                                            name="city" style="padding-top:16%; font-size:15px">
+                                        <label for="City">City</label>
                                     </div>
                                 </div>
 
                                 <div class="col">
                                     <div class="form-floating  mb-4">
-                                        <input type="text" class="form-control" id="floatingInput" placeholder="state"
+                                        <input type="text" class="form-control" id="state"
+                                            placeholder="state" name="state"
                                             style="padding-top:16%; font-size:15px;margin-left:-6%">
-                                        <label for="floatingInput">State</label>
+                                        <label for="State">State</label>
                                     </div>
                                 </div>
                             </div>
@@ -363,12 +364,11 @@
 
                         <div>
                             <div class="form-floating  mb-4">
-                                <input type="text" class="form-control" id="floatingInput" placeholder="Pincode"
-                                    style="padding-top:30px; font-size:15px;width:200px">
-                                <label for="floatingInput">Pincode</label>
+                                <input type="text" class="form-control" id="pincode" placeholder="Pincode"
+                                    name="pincode" style="padding-top:30px; font-size:15px;width:200px">
+                                <label for="Pincode">Pincode</label>
                             </div>
                         </div>
-
                         </br>
                         <h6 style="font-size:15px;font-weight:700"> Permanent Address</h6>
                         </br>
@@ -376,10 +376,10 @@
 
                         <div>
                             <div class="form-floating mb-4">
-                                <input type="text" class="form-control" id="floatingInput"
-                                    placeholder="Flat no/Bulding Name"
+                                <input type="text" class="form-control" id="building"
+                                    placeholder="Flat no/Bulding Name" name="building"
                                     style="width: 417px;padding-top:30px; font-size:15px">
-                                <label for="floatingInput">Flat no/Bulding Name</label>
+                                <label for="building">Flat no/Bulding Name</label>
                             </div>
                         </div>
 
@@ -388,26 +388,29 @@
 
 
                         <div class="form-floating mb-4">
-                            <input type="pincode" class="form-control" id="floatingInput"
-                                placeholder="Locality/Area/Street" style="width:417px;padding-top:30px; font-size:15px">
-                            <label for="floatingInput">Locality/Area/Street</label>
+                            <input type="pincode" class="form-control" id="area"
+                                placeholder="Locality/Area/Street" name="area"
+                                style="width:417px;padding-top:30px; font-size:15px">
+                            <label for="area">Locality/Area/Street</label>
                         </div>
 
                         <div style="display:flex;">
                             <div class="row">
                                 <div class="col">
                                     <div class="form-floating mb-4">
-                                        <input type="text" class="form-control" id="floatingInput" placeholder="City"
+                                        <input type="text" class="form-control" id="currentcity"
+                                            placeholder="City" name="currentcity"
                                             style="padding-top:16%; font-size:15px">
-                                        <label for="floatingInput">City</label>
+                                        <label for="CurrentCity">City</label>
                                     </div>
                                 </div>
 
                                 <div class="col">
                                     <div class="form-floating  mb-4">
-                                        <input type="text" class="form-control" id="floatingInput" placeholder="state"
+                                        <input type="text" class="form-control" id="currentstate"
+                                            placeholder="state" name="currentstate"
                                             style="padding-top:16%; font-size:15px;margin-left:-6%">
-                                        <label for="floatingInput">State</label>
+                                        <label for="CurrentState">State</label>
                                     </div>
                                 </div>
                             </div>
@@ -415,9 +418,9 @@
 
                         <div>
                             <div class="form-floating  mb-4">
-                                <input type="text" class="form-control" id="floatingInput" placeholder="Pincode"
-                                    style="width: 200px;padding-top:30px; font-size:15px">
-                                <label for="floatingInput">Pincode</label>
+                                <input type="text" class="form-control" id="currentpincode" placeholder="Pincode"
+                                    name="currentpincode" style="width: 200px;padding-top:30px; font-size:15px">
+                                <label for="Current Pincode">Pincode</label>
                             </div>
                         </div>
 
@@ -428,36 +431,44 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-floating mb-4">
-                                        <input type="Mobile number" class="form-control" id="floatingInput"
-                                            placeholder="Mobile no" style="padding-top:16%; font-size:15px">
-                                        <label for="floatingInput">Mobile Number</label>
+                                        <input type="Mobile number" class="form-control" id="mobile"
+                                            placeholder="Mobile no" name="mobile"
+                                            style="padding-top:16%; font-size:15px">
+                                        <label for="Mobile Number">Mobile Number</label>
                                     </div>
                                 </div>
 
                                 <div class="col">
                                     <div class="form-floating  mb-4">
-                                        <input type="Alternate Number" class="form-control" id="floatingInput"
-                                            placeholder="Alternate Number" style="padding-top:16%; font-size:15px;margin-left:-6%">
-                                        <label for="floatingInput">Alternate Number</label>
+                                        <input type="Alternate Number" class="form-control" id="alternate"
+                                            placeholder="Alternate Number" name="alternate"
+                                            style="padding-top:16%; font-size:15px;margin-left:-6%">
+                                        <label for="Alternate Number">Alternate Number</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                         <div class="form-floating mb-4">
-                            <input type="Email" class="form-control" id="floatingInput" placeholder="Email"
-                                style="width:417px;padding-top:30px; font-size:15px">
-                            <label for="floatingInput">Email</label>
+                            <input type="Email" class="form-control" id="email" placeholder="Email"
+                                name="email" style="width:417px;padding-top:30px; font-size:15px">
+                            <label for="Email">Email</label>
                         </div>
+
+
+
+
 
                         <br><br>
 
                         <div class="">
-                            <a href="#" class="btn btn-next width-50 ml-auto"
-                                style="background-color: rgb(153, 153, 217); color:white; font-weight:600; font-size:17px;width:100px;margin-right:5%">Next</a>
+
+                            <a href="#" class="btn btn-next"
+                                style="background-color: rgb(153, 153, 217); color:white; font-weight:600; font-size:17px;width:100px;">Next</a>
+
                         </div>
 
                     </div>
-
 
 
 
@@ -470,26 +481,28 @@
                         <br>
 
                         <div class="form-floating mb-4">
-                            <input type="name" class="form-control" id="floatingInput" placeholder="name"
-                                style="width:417px;padding-top:30px; font-size:15px">
-                            <label for="floatingInput">Account Holder Name</label>
+                            <input type="name" class="form-control" id="Account Holder Name" placeholder="name"
+                                name="accountholdername" style="width:417px;padding-top:30px; font-size:15px">
+                            <label for="Account Holder Name">Account Holder Name</label>
                         </div>
 
                         <div style="display:flex;">
                             <div class="row">
                                 <div class="col">
                                     <div class="form-floating mb-4">
-                                        <input type="Account Number" class="form-control" id="floatingInput"
-                                            placeholder="Account Number" style="padding-top:16%; font-size:15px">
-                                        <label for="floatingInput">Account Number</label>
+                                        <input type="Account Number" class="form-control" id="accountnumber"
+                                            placeholder="Account Number" name="accountnumber"
+                                            style="padding-top:16%; font-size:15px">
+                                        <label for="Account Number">Account Number</label>
                                     </div>
                                 </div>
 
                                 <div class="col">
                                     <div class="form-floating  mb-4">
-                                        <input type="IFSC Code" class="form-control" id="floatingInput"
-                                            placeholder="IFSC Code" style="padding-top:16%; font-size:15px;margin-left:-6%">
-                                        <label for="floatingInput">IFSC Code</label>
+                                        <input type="IFSC Code" class="form-control" id="ifsccode" name="ifsccode"
+                                            placeholder="IFSC Code"
+                                            style="padding-top:16%; font-size:15px;margin-left:-6%">
+                                        <label for="ifsccode">IFSC Code</label>
                                     </div>
                                 </div>
                             </div>
@@ -499,48 +512,52 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-floating mb-4">
-                                        <input type="text" class="form-control" id="floatingInput"
-                                            placeholder="Bank Name" style="padding-top:16%; font-size:15px">
-                                        <label for="floatingInput">Bank Name</label>
+                                        <input type="text" class="form-control" id="bankname"
+                                            placeholder="Bank Name" name="bankname"
+                                            style="padding-top:16%; font-size:15px">
+                                        <label for="Bank Name">Bank Name</label>
                                     </div>
                                 </div>
 
                                 <div class="col">
                                     <div class="form-floating  mb-4">
-                                        <input type="Branch Name" class="form-control" id="floatingInput"
-                                            placeholder="Branch Name" style="padding-top:16%; font-size:15px;margin-left:-6%">
-                                        <label for="floatingInput">Branch Name</label>
+                                        <input type="Branch Name" class="form-control" id="branchname"
+                                            placeholder="Branch Name" name="branchname"
+                                            style="padding-top:16%; font-size:15px;margin-left:-6%">
+                                        <label for="branchname">Branch Name</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
 
                         <br>
                         <h6 style="font-size:15px;font-weight:700">Bank Details 2</h6>
                         <br>
 
                         <div class="form-floating mb-4">
-                            <input type="name" class="form-control" id="floatingInput" placeholder="name"
+                            <input type="name" class="form-control" id="Company Account Holder Name"
+                                placeholder="name" name="companyaccountholdername"
                                 style="width:417px;padding-top:30px; font-size:15px">
-                            <label for="floatingInput">Account Holder Name</label>
+                            <label for="Company Account Holder Name">Account Holder Name</label>
                         </div>
 
                         <div style="display:flex;">
                             <div class="row">
                                 <div class="col">
                                     <div class="form-floating mb-4">
-                                        <input type="Account Number" class="form-control" id="floatingInput"
-                                            placeholder="Account Number" style="padding-top:16%; font-size:15px">
-                                        <label for="floatingInput">Account Number</label>
+                                        <input type="Account Number" class="form-control" id="companyaccountnumber"
+                                            placeholder="Account Number" name="companyaccountnumber"
+                                            style="padding-top:16%; font-size:15px">
+                                        <label for="Company Account Number">Account Number</label>
                                     </div>
                                 </div>
 
                                 <div class="col">
                                     <div class="form-floating  mb-4">
-                                        <input type="IFSC Code" class="form-control" id="floatingInput"
-                                            placeholder="IFSC Code" style="padding-top:16%; font-size:15px;margin-left:-6%">
-                                        <label for="floatingInput">IFSC Code</label>
+                                        <input type="IFSC Code" class="form-control" id="companyifsccode"
+                                            placeholder="IFSC Code" name="companyifsccode"
+                                            style="padding-top:16%; font-size:15px;margin-left:-6%">
+                                        <label for="Company IFSC code">IFSC Code</label>
                                     </div>
                                 </div>
                             </div>
@@ -550,27 +567,33 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-floating mb-4">
-                                        <input type="text" class="form-control" id="floatingInput"
-                                            placeholder="Bank Name" style="padding-top:16%; font-size:15px">
-                                        <label for="floatingInput">Bank Name</label>
+                                        <input type="text" class="form-control" id="companybankname"
+                                            placeholder="Bank Name" name="companybankname"
+                                            style="padding-top:16%; font-size:15px">
+                                        <label for="Company Bank Name">Bank Name</label>
                                     </div>
                                 </div>
 
                                 <div class="col">
                                     <div class="form-floating  mb-4">
-                                        <input type="Branch Name" class="form-control" id="floatingInput"
-                                            placeholder="Branch Name" style="padding-top:16%; font-size:15px;margin-left:-6%">
-                                        <label for="floatingInput">Branch Name</label>
+                                        <input type="Branch Name" class="form-control" id="companybranchname"
+                                            placeholder="Branch Name" name="companybranchname"
+                                            style="padding-top:16%; font-size:15px;margin-left:-6%">
+                                        <label for="Company Branch Name">Branch Name</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+
                         <br><br>
                         <div class="btns-group">
                             <a href="#" class="btn btn-prev"
                                 style="background-color: rgb(153, 153, 217); color:white; font-weight:600; font-size:17px;width:100px;">Previous</a>
+
                             <a href="#" class="btn btn-next"
-                                style="background-color: rgb(101, 89, 89); color:white; font-weight:600; font-size:17px;width:100px;margin-left:45%">Next</a>
+                                style="background-color: rgb(153, 153, 217); color:white; font-weight:600; font-size:17px;width:100px;">Next</a>
+
                         </div>
                     </div>
 
@@ -586,17 +609,19 @@
 
                                 <div class="col">
                                     <div class=" form-floating mb-4">
-                                        <input type="text" class="form-control" id="floatingInput"
-                                            placeholder="Work Mobikle Num" style="padding-top:16%; font-size:15px">
-                                        <label for="floatingInput">Work Mobile Num</label>
+                                        <input type="text" class="form-control" id="workmobilenumber"
+                                            placeholder="Work Mobikle Num" name="workmobilenumber"
+                                            style="padding-top:16%; font-size:15px">
+                                        <label for="Work Mobile number">Work Mobile Num</label>
                                     </div>
                                 </div>
 
                                 <div class="col">
                                     <div class=" form-floating mb-4">
-                                        <input type="email" class="form-control" id="floatingInput"
-                                            placeholder="Work Email" style="padding-top:16%; font-size:15px;margin-left:-6%">
-                                        <label for="floatingInput">Work Email</label>
+                                        <input type="email" class="form-control" id="workemail"
+                                            placeholder="Work Email" name="workemail"
+                                            style="padding-top:16%; font-size:15px;margin-left:-6%">
+                                        <label for="Work Email">Work Email</label>
                                     </div>
                                 </div>
 
@@ -614,17 +639,18 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-floating mb-4">
-                                        <input type="date" class="form-control" id="floatingInput"
-                                            placeholder="Hired Date"
+                                        <input type="date" class="form-control" id="hireddate"
+                                            placeholder="Hired Date" name="hireddate"
                                             style="width:200px;padding-top:16%; font-size:15px">
-                                        <label for="floatingInput">Hired Date</label>
+                                        <label for="Hired Date">Hired Date</label>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-floating mb-3">
-                                        <input type="Employee Id" class="form-control" id="floatingInput"
-                                            placeholder="Employee Id" style="padding-top:16%; font-size:15px;margin-left:-6%">
-                                        <label for="floatingInput">Employee Id</label>
+                                        <input type="Employee Id" class="form-control" id="employeeid"
+                                            placeholder="Employee Id" name="employeeid"
+                                            style="padding-top:16%; font-size:15px;margin-left:-6%">
+                                        <label for="Employee Id">Employee Id</label>
                                     </div>
                                 </div>
 
@@ -637,16 +663,18 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-floating mb-4">
-                                        <input type="Designation" class="form-control" id="floatingInput"
-                                            placeholder="Designation" style="padding-top:16%; font-size:15px">
-                                        <label for="floatingInput">Designation</label>
+                                        <input type="Designation" class="form-control" id="designation"
+                                            placeholder="Designation" name="designation"
+                                            style="padding-top:16%; font-size:15px">
+                                        <label for="Designation">Designation</label>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-floating mb-3">
-                                        <input type="Department" class="form-control" id="floatingInput"
-                                            placeholder="Department" style="padding-top:16%; font-size:15px;margin-left:-6%">
-                                        <label for="floatingInput">Department</label>
+                                        <input type="Department" class="form-control" id="department"
+                                            placeholder="Department" name="department"
+                                            style="padding-top:16%; font-size:15px;margin-left:-6%">
+                                        <label for="Department">Department</label>
                                     </div>
                                 </div>
 
@@ -655,15 +683,20 @@
                             </div>
                         </div>
 
+
                         <br><br>
 
                         <div class="btns-group">
                             <a href="#" class="btn btn-prev"
                                 style="background-color: rgb(153, 153, 217); color:white; font-weight:600; font-size:17px;width:100px;">Previous</a>
+
                             <a href="#" class="btn btn-next"
-                                style="background-color: rgb(101, 89, 89); color:white; font-weight:600; font-size:17px;width:100px;margin-left:45%">Next</a>
+                                style="background-color: rgb(153, 153, 217); color:white; font-weight:600; font-size:17px;width:100px;">Next</a>
+
+                           
                         </div>
                     </div>
+
 
                     <div class="form-step">
 
@@ -676,26 +709,23 @@
                                 <div class="col">
                                     <div class=" form-floating mb-4">
                                         <input type="text" class="form-control" id="ctc" placeholder=" CTC"
-                                            style="padding-top:16%; font-size:15px">
-                                        <label for="floatingInput">CTC*</label>
+                                            name="ctc" style="padding-top:16%; font-size:15px">
+                                        <label for="CTC">CTC*</label>
                                     </div>
                                 </div>
 
                                 <div class="col">
                                     <div class=" form-floating mb-4">
-                                        <input type="text" class="form-control" id="floatingInput" placeholder="UAN"
-                                            style="padding-top:16%; font-size:15px;margin-left:-6%">
-                                        <label for="floatingInput">UAN*</label>
+                                        <input type="text" class="form-control" id="uan" placeholder="UAN"
+                                            name="uan" style="padding-top:16%; font-size:15px;margin-left:-6%">
+                                        <label for="UAN">UAN*</label>
                                     </div>
                                 </div>
-
                             </div>
-
-                            <button class="btn btn-success active" type="button" id="myBtn" style="width:100px; height:45px; margin-left:2%">Get Value</button>
+                            <button class="btn btn-success active" type="button" id="myBtn"
+                                style="width:100px; height:45px; margin-left:2%">Get Value</button>
 
                         </div>
-
-<br><br>
 
 
                         <ul class="nav nav-pills">
@@ -704,9 +734,7 @@
                             <li><a data-toggle="pill" href="#Deductions">Deductions</a></li>
 
                         </ul>
-
                         <div class="tab-content">
-
                             <div id="Earnings" class="tab-pane fade">
                                 <br>
                                 <br>
@@ -716,50 +744,56 @@
                                         <div class="col">
                                             <div class=" form-floating mb-4">
                                                 <input type="text" class="form-control" id="basic"
-                                                    placeholder="Basic Salary" style="padding-top:16%; font-size:15px">
-                                                <label for="floatingInput">Basic Salary*</label>
+                                                    placeholder="Basic Salary" name="basicsalary"
+                                                    style="padding-top:16%; font-size:15px">
+                                                <label for="Basic Salary">Basic Salary*</label>
                                             </div>
                                         </div>
 
                                         <div class="col">
                                             <div class=" form-floating mb-4">
                                                 <input type="text" class="form-control" id="hra"
-                                                    placeholder="HRA" style="padding-top:16%; font-size:15px;margin-left:-6%">
-                                                <label for="floatingInput">HRA*</label>
+                                                    placeholder="HRA" name="hra"
+                                                    style="padding-top:16%; font-size:15px;margin-left:-6%">
+                                                <label for="HRA">HRA*</label>
                                             </div>
                                         </div>
 
                                     </div>
                                 </div>
+
                                 <div style="display:flex;">
                                     <div class="row">
 
                                         <div class="col">
                                             <div class=" form-floating mb-4">
                                                 <input type="text" class="form-control" id="conveyance"
-                                                    placeholder=" Conveyance" style="padding-top:16%; font-size:15px">
-                                                <label for="floatingInput">Conveyance*</label>
+                                                    placeholder=" Conveyance" name="conveyance"
+                                                    style="padding-top:16%; font-size:15px">
+                                                <label for="Conveyance">Conveyance*</label>
                                             </div>
                                         </div>
 
                                         <div class="col">
                                             <div class=" form-floating mb-4">
                                                 <input type="text" class="form-control" id="medicalAllowance"
-                                                    placeholder="Medical Allowance"
+                                                    placeholder="Medical Allowance" name="medicalallowance"
                                                     style="padding-top:16%; font-size:15px;margin-left:-6%">
-                                                <label for="floatingInput">Medical Allowance*</label>
+                                                <label for="Medical Allowance">Medical Allowance*</label>
                                             </div>
                                         </div>
 
                                     </div>
                                 </div>
+
                                 <div class=" form-floating mb-4">
                                     <input type="text" class="form-control" id="taxOne"
-                                        placeholder="Special Allowance"
+                                        placeholder="Special Allowance" name="specialallowance"
                                         style="width:417px;padding-top:30px; font-size:15px">
-                                    <label for="floatingInput">Special Allowance*</label>
+                                    <label for="Special Allowance">Special Allowance*</label>
                                 </div>
                             </div>
+
                             <br>
 
                             <div id="Deductions" class="tab-pane fade">
@@ -771,39 +805,44 @@
 
                                         <div class="col">
                                             <div class=" form-floating mb-4">
-                                                <input type="text" class="form-control" id="professional"
-                                                    placeholder="Proffesional Tax*"
-                                                    style="padding-top:16%; font-size:15px">
-                                                <label for="floatingInput">Proffesional Tax*</label>
+                                                <input type="Proffesional Tax*" class="form-control"
+                                                    id="professional" placeholder="Proffesional Tax*"
+                                                    name="professionaltax" style="padding-top:16%; font-size:15px">
+                                                <label for="Professional Tax">Proffesional Tax*</label>
                                             </div>
                                         </div>
 
                                         <div class="col">
                                             <div class=" form-floating mb-4">
                                                 <input type="text" class="form-control" id="tds"
-                                                    placeholder="TDS" style="padding-top:16%; font-size:15px;margin-left:-6%">
-                                                <label for="floatingInput">TDS*</label>
+                                                    placeholder="TDS" name="tds"
+                                                    style="padding-top:16%; font-size:15px;margin-left:-6%">
+                                                <label for="TDS">TDS*</label>
                                             </div>
                                         </div>
 
+
                                     </div>
                                 </div>
+
                                 <div style="display:flex;">
                                     <div class="row">
 
                                         <div class="col">
                                             <div class=" form-floating mb-4">
                                                 <input type="text" class="form-control" id="tdsOnBonus"
-                                                    placeholder="TDS on Bonus" style="padding-top:16%; font-size:15px">
-                                                <label for="floatingInput">TDS On Bonus*</label>
+                                                    placeholder="TDS on Bonus" name="tdsonbonus"
+                                                    style="padding-top:16%; font-size:15px">
+                                                <label for="TDS on Bonus">TDS On Bonus*</label>
                                             </div>
                                         </div>
 
                                         <div class="col">
                                             <div class=" form-floating mb-4">
                                                 <input type="text" class="form-control" id="foodVouchers"
-                                                    placeholder="Food Vouchers" style="padding-top:16%; font-size:15px;margin-left:-6%">
-                                                <label for="floatingInput">Food Vouchers*</label>
+                                                    placeholder="Food Vouchers" name="foodvouchers"
+                                                    style="padding-top:16%; font-size:15px;margin-left:-6%">
+                                                <label for="Food Vouchers">Food Vouchers*</label>
                                             </div>
                                         </div>
 
@@ -816,50 +855,51 @@
                                         <div class="col">
                                             <div class=" form-floating mb-4">
                                                 <input type="text" class="form-control" id="epf"
-                                                    placeholder="EPF" style="padding-top:16%; font-size:15px">
-                                                <label for="floatingInput">EPF*</label>
+                                                    placeholder="EPF" name="epf"
+                                                    style="padding-top:16%; font-size:15px">
+                                                <label for="EPF">EPF*</label>
                                             </div>
                                         </div>
 
                                         <div class="col">
                                             <div class=" form-floating mb-4">
                                                 <input type="text" class="form-control" id="loan"
-                                                    placeholder="Loans/Advances Deductions"
+                                                    placeholder="Loans/Advances Deductions" name="loandeductions"
                                                     style="padding-top:16%; font-size:15px;margin-left:-6%">
-                                                <label for="floatingInput">Loan Deductions*</label>
+                                                <label for="Loan Deductions">Loan Deductions*</label>
                                             </div>
                                         </div>
 
                                     </div>
                                 </div>
+
                                 <div style="display:flex;">
                                     <div class="row">
 
                                         <div class="col">
                                             <div class=" form-floating mb-4">
                                                 <input type="text" class="form-control" id="otherDeductions"
-                                                    placeholder="Other Deductions"
+                                                    placeholder="Other Deductions" name="otherdeductions"
                                                     style="padding-top:16%; font-size:15px">
-                                                <label for="floatingInput">Other Deductions*</label>
+                                                <label for="Other Deductions">Other Deductions*</label>
                                             </div>
                                         </div>
 
                                         <div class="col">
                                             <div class=" form-floating mb-4">
                                                 <input type="text" class="form-control" id="taxTwo"
-                                                    placeholder="ESI" style="padding-top:16%; font-size:15px;margin-left:-6%">
-                                                <label for="floatingInput">ESI*</label>
+                                                    placeholder="ESI" name="esi"
+                                                    style="padding-top:16%; font-size:15px;margin-left:-6%">
+                                                <label for="ESI">ESI*</label>
                                             </div>
                                         </div>
 
                                     </div>
-
-
-
                                 </div>
-
                             </div>
                         </div>
+
+
                         <br><br>
 
                         <div style="display:flex;">
@@ -868,21 +908,25 @@
                                 <div class="col">
                                     <div class=" form-floating mb-4">
                                         <input type="text" class="form-control" id="gross"
-                                            placeholder="Gross Pay" style="padding-top:16%; font-size:15px">
-                                        <label for="floatingInput">Gross Pay*</label>
+                                            placeholder="Gross Pay" name="grosspay"
+                                            style="padding-top:16%; font-size:15px">
+                                        <label for="Gross Pay">Gross Pay*</label>
                                     </div>
                                 </div>
 
                                 <div class="col">
                                     <div class=" form-floating mb-4">
-                                        <input type="text" class="form-control" id="net" placeholder="Net Pay"
+                                        <input type="text" class="form-control" id="net"
+                                            placeholder="Net Pay" name="netpay"
                                             style="padding-top:16%; font-size:15px;margin-left:-6%">
-                                        <label for="floatingInput">Net Pay*</label>
+                                        <label for="Net Pay">Net Pay*</label>
                                     </div>
                                 </div>
 
                             </div>
                         </div>
+
+
 
 
 
@@ -895,152 +939,136 @@
                         <div class="btns-group">
                             <a href="#" class="btn btn-prev"
                                 style="background-color: rgb(153, 153, 217); color:white; font-weight:600; font-size:17px;width:100px;">Previous</a>
+
                             <a href="#" class="btn btn-next"
-                                style="background-color: rgb(101, 89, 89); color:white; font-weight:600; font-size:17px;width:100px;margin-left:45%">Next</a>
+                                style="background-color: rgb(153, 153, 217); color:white; font-weight:600; font-size:17px;width:100px;">Next</a>
+
+                           
                         </div>
                     </div>
 
                     <div class="form-step">
 
-                        <h1 style="font-size:20px;font-weight:700">Tax info</h1>
-                        <br>
-                        <h6 style="font-size:15px;font-weight:700">Investments/Saving Details</h6>
-                        <br>
-                        <h6 style="font-size:15px;font-weight:700">Under Section 80C</h6>
-                        <br>
+                    <h1 style="font-size:20px;font-weight:700">Tax info</h1>
+                    <br>
+                    <h6 style="font-size:15px;font-weight:700">Investments/Saving Details</h6>
+                    <br>
+                    <h6 style="font-size:15px;font-weight:700">Under Section 80C</h6>
+                    <br>
 
-                        <div class=" form-floating mb-4">
-                            <input type="text" class="form-control" id="floatingInput"
-                                placeholder="Deductions under Pension Scheme of Insurance"
-                                style="width:417px;padding-top:30px; font-size:15px">
-                            <label for="floatingInput">Deductions under Pension Scheme of Insurance*</label>
-                        </div>
-
-                        <div class=" form-floating mb-4">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Deductions Under New Pension Scheme-NPS*"
-                                style="width:417px;padding-top:30px; font-size:15px">
-                            <label for="floatingInput">Deductions Under New Pension Scheme-NPS*</label>
-                        </div>
-
-                        <div class=" form-floating mb-4">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Nsc*"
-                                style="width:417px;padding-top:30px; font-size:15px">
-                            <label for="floatingInput">Nsc*</label>
-                        </div>
-                        <div class=" form-floating mb-4">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="PPF*"
-                                style="width:417px;padding-top:30px; font-size:15px">
-                            <label for="floatingInput">PPF*</label>
-                        </div>
-                        <div class=" form-floating mb-4">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Infra Structure Bond*"
-                                style="width:417px;padding-top:30px; font-size:15px">
-                            <label for="floatingInput">Infra Structure Bond*</label>
-                        </div>
-
-                        <div class=" form-floating mb-4">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Children Education*"
-                                style="width:417px;padding-top:30px; font-size:15px">
-                            <label for="floatingInput">Children Education*</label>
-                        </div>
-
-                        <div class=" form-floating mb-4">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Housing Loan Principle repayment and Interest*"
-                                style="width:417px;padding-top:30px; font-size:15px">
-                            <label for="floatingInput">Housing Loan Principle repayment and Interest*</label>
-                        </div>
-
-                        <div class=" form-floating mb-4">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Insurance Premium*"
-                                style="width:417px;padding-top:30px; font-size:15px">
-                            <label for="floatingInput">Insurance Premium*</label>
-                        </div>
-
-                        <div class=" form-floating mb-4">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Others(MF,ULIP)*"
-                                style="width:417px;padding-top:30px; font-size:15px">
-                            <label for="floatingInput">Others(MF,ULIP)*</label>
-                        </div>
-
-                        <div class=" form-floating mb-4">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="EPF & Voluntary PF*"
-                                style="width:417px;padding-top:30px; font-size:15px">
-                            <label for="floatingInput">EPF & Voluntary PF*</label>
-                        </div>
-<br>
-                        <h6 style="font-size:15px;font-weight:700">Under Section 80 D</h6>
-                        <br>
-
-                        <div class=" form-floating mb-4">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Medical Insurance Premium-Self*"
-                                style="width:417px;padding-top:30px; font-size:15px">
-                            <label for="floatingInput">Medical Insurance Premium-Self*</label>
-                        </div>
-
-                        <div class=" form-floating mb-4">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Medical Insurance Premium-parents(dependents)*"
-                                style="width:417px;padding-top:30px; font-size:15px">
-                            <label for="floatingInput">Medical Insurance Premium-parents(dependents)*</label>
-                        </div>
-
-                        <div class=" form-floating mb-4">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Medical for disable dependents*"
-                                style="width:417px;padding-top:30px; font-size:15px">
-                            <label for="floatingInput">Medical for disable dependents*</label>
-                        </div>
-
-                        <div class=" form-floating mb-4">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Medical expenditure for specifies diseases*"
-                                style="width:417px;padding-top:30px; font-size:15px">
-                            <label for="floatingInput">Medical expenditure for specifies diseases*</label>
-                        </div>
-
-                        <div class=" form-floating mb-4">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Deferred Annuity*"
-                                style="width:417px;padding-top:30px; font-size:15px">
-                            <label for="floatingInput">Deferred Annuity*</label>
-                        </div>
-
-                        <div class=" form-floating mb-4">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Other Mscl.Sections*"
-                                style="width:417px;padding-top:30px; font-size:15px">
-                            <label for="floatingInput">Other Mscl.Sections*</label>
-                        </div>
-
-                        <div class=" form-floating mb-4">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Higher Education Loan Interest Repayment[Sec 80E]*"
-                                style="width:417px;padding-top:30px; font-size:15px">
-                            <label for="floatingInput">Higher Education Loan Interest Repayment[Sec 80E]*</label>
-                        </div>
-
-                        <div class=" form-floating mb-4">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Rent Deductions[Sec 80GG] only if HRA is not received*"
-                                style="width:417px;padding-top:30px; font-size:15px">
-                            <label for="floatingInput">Rent Deductions[Sec 80GG] only if HRA is not received*</label>
-                        </div>
-                        <br><br><br>
-                        <div style="display:flex">
-                            <h6 style="font-size:15px;font-weight:700">Total (Savings of Tax Rebate) =</h6>
-                            <div class=" form-floating mb-4">
-                                <input type="text" class="form-control" id="floatingInput" placeholder=""
-                                    style="width:100px;padding-top:30px; font-size:15px;margin-left:5%">
-
-                            </div>
-
-                        </div>
-<br><br>
-
-                        <div class="btns-group">
-                            <a href="#" class="btn btn-prev"
-                                style="background-color: rgb(153, 153, 217); color:white; font-weight:600; font-size:17px;width:100px">Previous</a>
-                            <a href="contract" class="btn"
-                                style="background-color: rgb(101, 89, 89); color:white; font-weight:600; font-size:17px;width:100px;margin-left:45%">
-                                Submit
-                            </a>
-                        </div>
+                    <div class=" form-floating mb-4">
+                        <input type="text" class="form-control" id="pension"
+                            placeholder="Deductions under Pension Scheme of Insurance" name="pension"
+                            style="width:417px;padding-top:30px; font-size:15px">
+                        <label for="pension">Deductions under Pension Scheme of Insurance*</label>
                     </div>
-                </form>
+
+                    <div class=" form-floating mb-4">
+                        <input type="text" class="form-control" id="newpension"
+                            placeholder="Deductions Under New Pension Scheme-NPS*" name="newpension"
+                            style="width:417px;padding-top:30px; font-size:15px">
+                        <label for="newpension">Deductions Under New Pension Scheme-NPS*</label>
+                    </div>
+                    <div class=" form-floating mb-4">
+                        <input type="text" class="form-control" id="nsc" placeholder="Nsc*" name="nsc"
+                            style="width:417px;padding-top:30px; font-size:15px">
+                        <label for="Nsc">Nsc*</label>
+                    </div>
+                    <div class=" form-floating mb-4">
+                        <input type="text" class="form-control" id="ppf" placeholder="PPF*" name="ppf"
+                            style="width:417px;padding-top:30px; font-size:15px">
+                        <label for="PPF">PPF*</label>
+                    </div>
+                    <div class=" form-floating mb-4">
+                        <input type="text" class="form-control" id="infrastructurebond"
+                            placeholder="Infra Structure Bond*" name="infrastructurebond"
+                            style="width:417px;padding-top:30px; font-size:15px">
+                        <label for="Infra Structure Bond">Infra Structure Bond*</label>
+                    </div>
+
+                    <div class=" form-floating mb-4">
+                        <input type="text" class="form-control" id="childreneducation"
+                            placeholder="Children Education*" name="childreneducation"
+                            style="width:417px;padding-top:30px; font-size:15px">
+                        <label for="Children Education">Children Education*</label>
+                    </div>
+
+                    <div class=" form-floating mb-4">
+                        <input type="text" class="form-control" id="houseloan"
+                            placeholder="Housing Loan Principle repayment and Interest*" name="houseloan"
+                            style="width:417px;padding-top:30px; font-size:15px">
+                        <label for="House Loan">Housing Loan Principle repayment and Interest*</label>
+                    </div>
+
+                    <div class=" form-floating mb-4">
+                        <input type="text" class="form-control" id="Insurance Premium"
+                            placeholder="Insurance Premium*" name="insurancepremium"
+                            style="width:417px;padding-top:30px; font-size:15px">
+                        <label for="Insurance Premium">Insurance Premium*</label>
+                    </div>
+
+                    <div class=" form-floating mb-4">
+                        <input type="text" class="form-control" id="Others" placeholder="Others(MF,ULIP)*"
+                            name="others" style="width:417px;padding-top:30px; font-size:15px">
+                        <label for="Others">Others(MF,ULIP)*</label>
+                    </div>
+
+                    <div class=" form-floating mb-4">
+                        <input type="text" class="form-control" id="EPF VoluntaryPF"
+                            placeholder="EPF & Voluntary PF*" name="epfvoluntarypf"
+                            style="width:417px;padding-top:30px; font-size:15px">
+                        <label for="EPF VoluntaryPF">EPF & Voluntary PF*</label>
+                    </div>
+                    <br>
+                    <h6 style="font-size:15px;font-weight:700">Under Section 80 D</h6>
+                    <br>
+
+                    <div class=" form-floating mb-4">
+                        <input type="text" class="form-control" id="Medical Insurance self"
+                            placeholder="Medical Insurance Premium-Self*" name="medicalinsuranceself"
+                            style="width:417px;padding-top:30px; font-size:15px">
+                        <label for="Medical Insurance self">Medical Insurance Premium-Self*</label>
+                    </div>
+
+                    <div class=" form-floating mb-4">
+                        <input type="text" class="form-control" id="Medical Insurance Parents"
+                            placeholder="Medical Insurance Premium-parents(dependents)*"
+                            name="medicalinsuranceparents" style="width:417px;padding-top:30px; font-size:15px">
+                        <label for="Medical Insurance Parents">Medical Insurance
+                            Premium-parents(dependents)*</label>
+                    </div>
+
+                    <div class=" form-floating mb-4">
+                        <input type="text" class="form-control" id="Medical for disable"
+                            placeholder="Medical for disable dependents*" name="medicalfordisable"
+                            style="width:417px;padding-top:30px; font-size:15px">
+                        <label for="Medical for disable">Medical for disable dependents*</label>
+                    </div>
+
+                    <div class=" form-floating mb-4">
+                        <input type="text" class="form-control" id="Medical expenditure"
+                            placeholder="Medical expenditure for specifies diseases*" name="medicalexpenditure"
+                            style="width:417px;padding-top:30px; font-size:15px">
+                        <label for="Medical expenditure">Medical expenditure for specifies diseases*</label>
+                    </div>
+                    <br><br>
+
+                    <div class="btns-group">
+                        <a href="#" class="btn btn-prev"
+                            style="background-color: rgb(153, 153, 217); color:white; font-weight:600; font-size:17px;width:100px">Previous</a>
+                        <button class="btn "
+                            style="background-color: rgb(101, 89, 89); color:white; font-weight:600; font-size:17px;width:100px;margin-left:45%">
+                            Submit
+                        </button>
+                    </div>
             </div>
+
+
+            </form>
+
+
+
+        </div>
         </div>
 
 
@@ -1068,54 +1096,55 @@
 </html>
 
 <script>
-const prevBtns = document.querySelectorAll(".btn-prev");
-const nextBtns = document.querySelectorAll(".btn-next");
-const progress = document.getElementById("progress");
-const formSteps = document.querySelectorAll(".form-step");
-const progressSteps = document.querySelectorAll(".progress-step");
+    const prevBtns = document.querySelectorAll(".btn-prev");
+    const nextBtns = document.querySelectorAll(".btn-next");
+    const progress = document.getElementById("progress");
+    const formSteps = document.querySelectorAll(".form-step");
+    const progressSteps = document.querySelectorAll(".progress-step");
 
-let formStepsNum = 0;
+    let formStepsNum = 0;
 
-nextBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-        formStepsNum++;
-        updateFormSteps();
-        updateProgressbar();
-    });
-});
-
-prevBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-        formStepsNum--;
-        updateFormSteps();
-        updateProgressbar();
-    });
-});
-
-function updateFormSteps() {
-    formSteps.forEach((formStep) => {
-        formStep.classList.contains("form-step-active") &&
-            formStep.classList.remove("form-step-active");
+    nextBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            formStepsNum++;
+            updateFormSteps();
+            updateProgressbar();
+        });
     });
 
-    formSteps[formStepsNum].classList.add("form-step-active");
-}
-
-function updateProgressbar() {
-    progressSteps.forEach((progressStep, idx) => {
-        if (idx < formStepsNum + 1) {
-            progressStep.classList.add("progress-step-active");
-        } else {
-            progressStep.classList.remove("progress-step-active");
-        }
+    prevBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            formStepsNum--;
+            updateFormSteps();
+            updateProgressbar();
+        });
     });
 
-    const progressActive = document.querySelectorAll(".progress-step-active");
+    function updateFormSteps() {
+        formSteps.forEach((formStep) => {
+            formStep.classList.contains("form-step-active") &&
+                formStep.classList.remove("form-step-active");
+        });
 
-    progress.style.width =
-        ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
-}
+        formSteps[formStepsNum].classList.add("form-step-active");
+    }
+
+    function updateProgressbar() {
+        progressSteps.forEach((progressStep, idx) => {
+            if (idx < formStepsNum + 1) {
+                progressStep.classList.add("progress-step-active");
+            } else {
+                progressStep.classList.remove("progress-step-active");
+            }
+        });
+
+        const progressActive = document.querySelectorAll(".progress-step-active");
+
+        progress.style.width =
+            ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
+    }
 </script>
+
 
 
 

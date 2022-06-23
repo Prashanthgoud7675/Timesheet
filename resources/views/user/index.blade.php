@@ -88,7 +88,7 @@
                             <a> <i class="fa fa-user-circle-o"
                                     style="color: rgb(212, 212, 215); font-size: 35px"></i></a>
                         </li>
-                            <li class="nav-item dropdown" `>
+                            <li class="nav-item dropdown" style="margin-left: 25%">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="color:white;">
                                     {{ Auth::user()->name }}
                                 </a>
@@ -136,32 +136,16 @@
             </select>
         </a>
 
-
-        <select style="background-color:#002F6C; color:white;margin-top:2%; margin-bottom:2%; margin-left:2%">
-            <option value="Company List">Company</option>
-        </select>
-
-
-        <select style="background-color:#002F6C; color:white;margin-top:2%; margin-bottom:2%; margin-left:2%">
-            <option value="Company List">Reports</option>
-        </select>
-        <select style="background-color:#002F6C; color:white;margin-top:2%; margin-bottom:2%; margin-left:2%">
-            <option value="Company List">Taxes</option>
-        </select>
-        <select style="background-color:#002F6C; color:white;margin-top:2%; margin-bottom:2%; margin-left:2%">
-            <option value="Company List">Time</option>
-        </select>
-        <select style="background-color:#002F6C; color:white;margin-top:2%; margin-bottom:2%; margin-left:2%">
-            <option value="Company List">General Ledger</option>
-        </select>
-        <select style="background-color:#002F6C; color:white;margin-top:2%; margin-bottom:2%; margin-left:2%">
-            <option value="Company List">Insurance</option>
-        </select>
+        <br>
+    <br>
+    <br>
 
 
-
+        
 
     </section>
+
+    
     <div style="background-color:#002F6C">
         
         <div class="row justify-content-center">

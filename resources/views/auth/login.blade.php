@@ -14,6 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
     </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
     </script>
@@ -23,29 +24,20 @@
     <title>XSILICA HRMS</title>
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-<style>
-    body{
-        background-image: url("https://images.unsplash.com/photo-1497091071254-cc9b2ba7c48a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTF8fHRlY2hub2xvZ3l8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60");
-     
-     
-        background-size: cover;
-    }
-</style>
+
 
 </head>
 
-<body >
+<body style="background-color:whitesmoke">
 
 
-    <div class="row">
-        <div class="col-md-4"></div>
+    <div class="row justify-content-center">
+        
 
-        <div class="col-md-5" style="margin-top: 9%;background-color:rgba(192,192,192,0.2);border-radius:5%">
+        <div class="col-md-6" style="margin-top: 9%;background-color:white;width:500px;margin-bottom:5%;border-radius:10px; box-shadow: 0px 10px 50px rgba(180, 174, 174, 0.7);">
             <div class="" style="padding-top:4%;padding-bottom:4%;border-radius:25px">
                 <div class="flex justify-center">
-                    <img src="https://imagizer.imageshack.com/img923/5138/bRZo8P.png" alt="logo" height="170px"
-                        width="150px">
-
+                    <h1 style="font-size:20px;font-weight:700">Welcome!</h1>
                 </div>
                 <br>
                 <div class="flex justify-center" style="margin-top: 0%">
@@ -71,17 +63,15 @@
                         @endif
 
 
-
-
-                        <form action="{{ route('login') }}" method="post">
+                        <form method="POST" action="{{ route('login') }}">
                             @csrf
 
 
                             <div class="mb-4">
-                                <label for="email" class="sr-only">Email</label>
-                                <input type="text" name="email" id="email" placeholder="Email"
+                                <label >User Id</label>
+                                <input type="text" name="email" id="email" placeholder="User ID"
                                     class="bg-gray-100 border-2 w-full p-2 rounded-lg @error('email') border-red-500 @enderror"
-                                    value="{{ old('email') }}">
+                                    value="{{ old('email') }} " style="width:300px">
 
                                 @error('email')
                                     <div class="text-red-500 mt-2 text-sm">
@@ -89,12 +79,12 @@
                                     </div>
                                 @enderror
                             </div>
-
+                          
                             <div class="mb-4">
-                                <label for="password" class="sr-only">Password</label>
+                                <label  >Password</label>
                                 <input type="password" name="password" id="password" placeholder="Enter password"
                                     class="bg-gray-100 border-2 w-full p-2 rounded-lg @error('password') border-red-500 @enderror"
-                                    value="">
+                                    value="" style="width:300px">
 
                                 @error('password')
                                     <div class="text-red-500 mt-2 text-sm">
@@ -102,30 +92,59 @@
                                     </div>
                                 @enderror
                             </div>
-                            <a href="" > <h1  style="font-size: 17px; font-weight:600; margin-left: 50%; margin-bottom:5%;color:whitesmoke"> Forgot Password! </h1> </a>
+                           
 
 
-
-                            <div>
+                            <div class="flex justify-center">
                                 <button type="submit"
-                                    class="bg-blue-500 text-white px-4 py-3 rounded font-medium w-full">Login</button>
+                                    class="bg-blue-500 text-white px-2 py-2 rounded font-medium w-35" style="background-color:#052CA3"> <a > SIGN IN </a> </button>
+                           
+                                    </div>
+                            <br>
+
+                            <input type="checkbox" name="remember" style="margin-bottom:15px"> Remember My User ID <i class="fa fa-question-circle"></i>
+
+                            <br>
+                        
+
+                            
+                            <div class="flex justify-center">
+                               
+
+                            
+
+                            <h1 style="color:#052CA3">FORGOT YOUR PASSWORD?</h1>
+
                             </div>
 
                             <br>
-
-
-
-                            <a href="register" >  <h1 class="text-center" style="font-size: 17px; font-weight:600; margin-left: 0%; margin-bottom:5%;color:whitesmoke;text-decoration:underline"> New User? Register </h1> </a>
-
-
+                           
                         </form>
 
                     </div>
                 </div>
+
+                <hr style="height:2px;width:350px;margin-left:40px">
+
+<br>
+<div class="flex justify-center">
+
+                          <h1 class="text-center" style="font-size: 17px; font-weight:600; margin-left: 0%; margin-bottom:5%;color:black;text-decoration:underline"> New User?</h1> 
+                            <i class="fa fa-user-plus" style="color:#052CA3;margin-left:1%;margin-top:1%">     <a href="{{ route('register') }}" > CREATE ACCOUNT </a> </i>
+
+</div>
+<br>
+<hr style="height:2px;width:350px;margin-left:40px">
+<br>
+
+<h1 style="font-weight:700;margin-left:5%">Not a Client yet?</h1>
+<p style="padding:20px"> RUN Powered  helps you manage your payroll,people, and benefits from anywhere. So you can spend more time growing your business.</p>
+<h1 style="float:right;margin-right:5%;color:#052CA3">Learn More<i class="fa fa-angle-right"></i></h1>
+<br><br>
             </div>
         </div>
     </div>
-    
+   
 </body>
 
 </html>

@@ -15,13 +15,12 @@ return new class extends Migration
     {
         Schema::create('emp_employes', function (Blueprint $table) {
             $table->id();
-            $table->string('Name');
-            
-            $table->string('My_ADP');
+            $table->string('First_Name');
+            $table->string('Last_Name');
+            $table->string('Registration');
             $table->string('Paperless');
             $table->string('contact_info')->unique();
-           
-            $table->date('employment_type');
+            $table->string('employment_type');
             $table->string('Status');
             $table->timestamps();
         });

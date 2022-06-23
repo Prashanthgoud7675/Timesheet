@@ -106,7 +106,7 @@
                     <div style="background-color: white; border-radius:10px;  box-shadow: 0px 10px 50px rgba(180, 174, 174, 0.7); width:250px;margin-left:12%">
                         <br>
 
-                        <a href="personal">  
+                        <a href="form">  
                         <i class='fa fa-pencil' style="color: rgb(17, 96, 179); background-color:rgb(205, 225, 245);border-radius:50%; font-size:20px; padding:13px;margin-left:10%; margin-bottom:5%"></i>
                         </a> 
 

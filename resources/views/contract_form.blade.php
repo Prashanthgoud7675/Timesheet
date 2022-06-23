@@ -491,9 +491,9 @@
 
                         <div class="btns-group">
                             <a href="#" class="btn btn-prev"
-                                style="background-color: blue; color:white; font-weight:600; font-size:17px; width:200px; margin-left:10%">Previous</a>
+                                style="background-color: rgb(153, 153, 217); color:white; font-weight:600; font-size:17px;width:100px; margin-left:20%">Previous</a>
                             <a href="#" class="btn btn-next"
-                                style="background-color: rgb(101, 89, 89); color:white; font-weight:600; font-size:17px; width:200px; margin-right:10%">Next</a>
+                                style="background-color: rgb(101, 89, 89); color:white; font-weight:600; font-size:17px;width:100px;margin-left:27%">Next</a>
                         </div>
                     </div>
                     <div class="form-step">
@@ -583,10 +583,11 @@
 
                         <div class="btns-group">
                             <a href="#" class="btn btn-prev"
-                                style="background-color: blue; color:white; font-weight:600; font-size:17px; width:200px; margin-left:10% ">Previous</a>
+                                style="background-color: rgb(153, 153, 217); color:white; font-weight:600; font-size:17px;width:100px; margin-left:20%">Previous</a>
                             <a href="#" class="btn btn-next"
-                                style="background-color: rgb(101, 89, 89); color:white; font-weight:600; font-size:17px; width:200px; margin-right:10%">Next</a>
+                                style="background-color: rgb(101, 89, 89); color:white; font-weight:600; font-size:17px;width:100px;margin-left:27%">Next</a>
                         </div>
+
                     </div>
                     <div class="form-step">
 
@@ -822,10 +823,13 @@
 
                         <div class="btns-group">
                             <a href="#" class="btn btn-prev"
-                                style="background-color: blue; color:white; font-weight:600; font-size:17px; width:200px; margin-left:10%">Previous</a>
-                                <input type="submit" value="Submit" class="btn"
-                                style="background-color: rgb(101, 89, 89); color:white; font-weight:600; font-size:17px; width:200px; margin-right:10%" />
+                                style="background-color: rgb(153, 153, 217); color:white; font-weight:600; font-size:17px;width:100px; margin-left:20%">Previous</a>
+                            <a href="contract" class="btn"
+                                style="background-color: rgb(101, 89, 89); color:white; font-weight:600; font-size:17px;width:100px;margin-left:27%">
+                                Submit
+                            </a>
                         </div>
+
                     </div>
 
 
