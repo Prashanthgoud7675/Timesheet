@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dept;
 use Illuminate\Http\Request;
 use App\Helpers\Helper;
 use Validator;
-use App\Models\Company;
 
-class CompanyController extends Controller
+class DeptController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +16,11 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        
-        $value = Company::all();
+        $data = Dept::all();
 
-        return view('companies.create',compact('value'));
+       
+        
+        return view('depts.create' , ['data' => $data]);
     }
 
     /**
@@ -29,7 +30,7 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        return view('companies.create');
+        return view('depts.create');
     }
 
     /**
@@ -38,55 +39,7 @@ class CompanyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-       $validatedData = $request->validate([
-
-            
-            'Client_ID' => 'required',
-            'Branch_Code' => 'required',
-            'Company_Name' => 'required',
-            'Company_Address' => 'required',
-            'Next_Check_Date' => 'required',
-            'Status' => 'required',
-            
-        ]);
-
-        $companies = Company::create($validatedData);
-
-        return redirect('/admin')->with('success', 'data added successfully');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Company $companies)
+    public function store(Request $request, Dept $dept)
     {
         $request->validate([
 
@@ -99,21 +52,72 @@ class CompanyController extends Controller
             'Status' => 'required',
         ]);
 
-        $companies->create($request->all());
+        $dept->create($request->all());
 
-        return redirect()->route('welcome')
-        ->withSuccessMessage('Company Info added Successfully');
-   
+        return redirect()->route('admin.index')
+        ->withSuccessMessage('Department added Successfully');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Dept  $dept
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Dept $dept)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Dept  $dept
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Dept $dept)
+    {
+        return view('depts.edit', compact('dept'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Dept  $dept
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Dept $dept)
+    {
+        $request->validate([
+
+             
+            'Client_ID' => 'required',
+            'Branch_Code' => 'required',
+            'Company_Name' => 'required',
+            'Company_Address' => 'required',
+            'Next_Check_Date' => 'required',
+            'Status' => 'required',
+            
+        ]);
+
+        $dept->update($request->all());
+
+        return redirect()->route('admin.index')
+        ->withSuccessMessage('Department edited Successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Dept  $dept
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Dept $dept)
     {
-        //
+        $dept->delete();
+
+        return redirect()->route('depts.index')
+        ->withSuccessMessage('Department deleted Successfully');
     }
 }

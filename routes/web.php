@@ -15,9 +15,10 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LogoutController;
 
 use App\Http\Controllers\CustomSearchController;
-use App\Http\Controllers\CompanyController;
+
 use App\Http\Controllers\EmployeeformController;
 use App\Http\Controllers\EmployeController;
+use App\Http\Controllers\DeptController;
 
 
 /*
@@ -96,6 +97,6 @@ Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name
 Route::get('/superadmin', [App\Http\Controllers\SuperAdminController::class, 'index'])->name('superadmin')->middleware('auth');
 
 
-Route::resource('/companies', CompanyController::class);
-
 Route::resource('/form', EmployeeformController::class);
+
+Route::resource('/depts', DeptController::class);

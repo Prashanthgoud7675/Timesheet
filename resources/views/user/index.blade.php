@@ -88,7 +88,7 @@
                             <a> <i class="fa fa-user-circle-o"
                                     style="color: rgb(212, 212, 215); font-size: 35px"></i></a>
                         </li>
-                            <li class="nav-item dropdown" style="margin-left: 25%">
+                            <li class="nav-item dropdown" >
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="color:white;">
                                     {{ Auth::user()->name }}
                                 </a>
@@ -138,7 +138,7 @@
 
         <br>
     <br>
-    <br>
+    <br><br>
 
 
         

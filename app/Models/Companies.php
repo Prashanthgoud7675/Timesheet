@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Company extends Model
+class Companies extends Model
 {
     use HasFactory;
 
@@ -16,4 +16,5 @@ class Company extends Model
         'Client_ID', 'Branch_Code', 'Company_Name','Company_Address','Next_Check_Date','Status'
 
     ];
+
 }

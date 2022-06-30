@@ -72,7 +72,7 @@
         <div>
     
     
-            <a class="btn btn-success" href="{{ route('jobs.create') }}" style="margin-top: 3%"> Create new Job</a>
+           
 
             <br>
             <br>
@@ -83,114 +83,49 @@
                 </div>
             @endif
 
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+
+                <p style="font-size: 19px; font-weight:600"> Personal Info </p>
+
+                    <br>
+                    <br>
+
             <div class="table-responsive" >
 
                 <table class="table table-bordered">
                     <tr style="background-color: black;color:white;font-size:17px">
                         <th>id</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Fathers Name</th>
-                        <th>DOB</th>
-                        <th>Gender</th>
-                        <th>Aadhar Num</th>
-                        <th>PAN Num</th>
-                        <th>Flat_No</th>
-                        <th>Locality</th>
-                        <th>City</th>
-                        <th>State</th>
-                        <th>Pincode</th>
-                        <th>Building_Name</th>
-                        <th>Area</th>
-                        <th>Current_City</th>
-                        <th>Current_State</th>
-                        <th>Current_Pincode</th>
-                        <th>Mobile</th>
-                        <th>Alternate_num</th>
-                        <th>Email</th>
-                        <th>Accountholder_Name</th>
-                        <th>Account Number</th>
-                        <th>IFSC Code</th>
-                        <th>Bank Name</th>
-                        <th>Branch Name</th>
-                        <th>Company Accountholder Name</th>
-                        <th>Company Account_Number</th>
-                        <th>Company IFSC Code</th>
-                        <th>Company Bank Name</th>
-                        <th>Company Branch Name</th>
-                        <th>Work Mobile Number</th>
-                        <th>Work Email</th>
-                        <th>Hired Date</th>
-                        <th>Employe_Id</th>
-                        <th>Designation</th>
-                        <th>Department</th>
-                        <th>Pension</th>
-                        <th>New_Pension</th>
-                        <th>NSC</th>
-                        <th>PPF</th>
-                        <th>Infrastructure Bond</th>
-                        <th>Children Education</th>
-                        <th>House Loan</th>
-                        <th>Insurance Premium</th>
-                        <th>Others</th>
-                        <th>Epfvoluntary PF</th>
-                        <th>Medical Insurance Self</th>
-                        <th>Medical Insurance Parents</th>
-                        <th>Medical for Disable</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <th>Client_ID</th>
+                        <th>Branch_Code</th>
+                        <th>Company_Name</th>
+                        <th>Company_Address</th>
+                        <th>Next_Check_Date</th>
+                        <th>Status</th>
+                       
                         <th width="250px">Action</th>
                     </tr>
                     @foreach ($data as $i)
                         <tr>
 
                             <td>{{ $i->id }}</td>
-                            <td>{{ $i->JobId }}</td>
-                            <td>{{ $i->JobTitle }}</td>
-                            <td>{{ $i->JobRole }}</td>
-                            <td>{{ $i->Description }}</td>
-                            <td>{{ $i->Positions }}</td>
-                            <td>{{ $i->Location }}</td>
-                            <td>{{ $i->AnnualSalary }}</td>
-                            <td>{{ $i->deptshortname }}</td>
-                            <td>{{ $i->Active }}</td>
-                            <td>{{ $i->CreatedDate }}</td>
-                            <td>{{ $i->CreatedBy }}</td>
-                            <td><a href="https://xsilica.com">{{ $i->ApplyLink }} </a></td>
-                            <td>{{ $i->CloseDate }}</td>
+                            <td>{{ $i->Client_ID }}</td>
+                            <td>{{ $i->Branch_Code }}</td>
+                            <td>{{ $i->Company_Name }}</td>
+                            <td>{{ $i->Company_Address }}</td>
+                            <td>{{ $i->Next_Check_Date }}</td>
+                            <td>{{ $i->Status }}</td>
+                           
+                           
                             <td>
-                                <form action="{{ route('jobs.destroy', $i->id) }}" method="POST">
+                                <form action="{{route('orgs.destroy', $i->id)}}" method="POST">
 
 
 
 
 
                                     <a class="btn btn-primary"
-                                        href="{{ route('jobs.edit', $i->id) }}">Edit</a>
+                                        href="{{route('orgs.edit', $i->id)}}">Edit</a>
 
 
 
@@ -205,6 +140,14 @@
                     @endforeach
                 </table>
             </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+
+           
         </div>
     </section>
 

@@ -48,13 +48,12 @@
 
 <body style="background-color: whitesmoke">
 
-    <section style="background-color:#002F6C;">
-
+<section style="background-color:#002F6C;">
         <nav class="navbar navbar-expand-lg  navbar-light fixed-top" style="background-color: #002F6C;height:50px">
             <div class="container" style="margin-top:2%">
                 <a href="#">
                     <img src="https://xsilica.com/images/xsilica_broucher_final_modified_05082016-2.png" alt="logo"
-                        height="70px" width="200px" style="margin-left: -10%">
+                        height="70px" width="200px" style="margin-left: -40%">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"
                     style="color:white; background-color:white">
@@ -81,11 +80,11 @@
                                 </li>
                             @endif
                         @else
-                        <li class="nav-item-active " style=" margin-left: 45%">
+                        <li class="nav-item-active " style=" margin-left: 35%">
                             <a> <i class="fa fa-user-circle-o"
                                     style="color: rgb(212, 212, 215); font-size: 35px"></i></a>
                         </li>
-                            <li class="nav-item dropdown" style="margin-left: 25%">
+                            <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="color:white;">
                                     {{ Auth::user()->name }}
                                 </a>
@@ -93,7 +92,7 @@
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown" >
                                     <a class="dropdown-item" href="{{ route('logout') }}" 
                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();" >
+                                                     document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -106,7 +105,8 @@
                             
                         @endguest
 
-                        
+                        <br>
+                        <br>
                        
 
 
@@ -115,21 +115,16 @@
             </div>
 
         </nav>
-        <br>
-        <br>
- 
 
-        <hr style="width: 88%; margin-left: 5%">
+<br>
+        
+        <hr style="width: 88%; margin-left: 5%;">
 
-        <select
-            style="background-color:#002F6C; color:white;margin-top:2%; margin-bottom:2%; margin-left:13%; border:none">
+        <select style="background-color:#002F6C; color:white;margin-top:2%; margin-bottom:2%; margin-left:13%">
             <option value="Company List">Company List</option>
         </select>
 
-        <br>
-    <br>
-
-
+<br><br><br>
 
 
     </section>
@@ -142,9 +137,9 @@
         <div class="row justify-content-center">
             <div class="col-md-10"
                 style="background-color: white; border-radius:10px;  box-shadow: 0px 10px 50px rgba(180, 174, 174, 0.7);">
-                <h3 class="breadcrumb" style="background-color: #1956a4; font-weight:600; color:white">Company List <a href="companies"> <i
+                <h3 class="breadcrumb" style="background-color: #1956a4; font-weight:600; color:white">Company List <a href="{{route('depts.create')}}"> <i
                         class="fa fa-plus-circle"
-                        style="font-size: 25px; color: rgb(212, 212, 215); margin-left:80%"> </i> </a> </h3>
+                        style="font-size: 25px; color: rgb(212, 212, 215); margin-left:80%;float:left"> </i> </a> </h3>
 
                 <br>
                 <br>
@@ -220,12 +215,13 @@
                
                 <tr>
                  
-                  <td style="font-size:17px; color:rgb(133, 125, 125)">{{$i->Client_ID}}</td>
-                  <td style="font-size:17px; color:rgb(133, 125, 125)">{{$i->Branch_Code}}</td>
-                  <td style="color: rgb(49, 143, 243); font-size:17px"> <a href="#"> {{$i->Company_Name}} </a> </td>
-                  <td style="font-size:17px; color:rgb(133, 125, 125)">{{$i->Company_Address}}</td>
-                  <td style="font-size:17px; color:rgb(133, 125, 125)">{{$i->Next_Check_Date}}</td>
-                  <td style="font-size:17px; color:rgb(133, 125, 125)">{{$i->Status}}</td>
+                  <td style="font-size:15px; color:rgb(133, 125, 125)">{{$i->Client_ID}}</td>
+                  <td style="font-size:15px; color:rgb(133, 125, 125)">{{$i->Branch_Code}}</td>
+                  <td style="color: rgb(49, 143, 243); font-size:15px"> <a href=""> {{$i->Company_Name}} </a> </td>
+                  <td style="font-size:15px; color:rgb(133, 125, 125)">{{$i->Company_Address}}</td>
+                  <td style="font-size:15px; color:rgb(133, 125, 125)">{{$i->Next_Check_Date}}</td>
+                  <td style="font-size:15px; color:rgb(133, 125, 125)">{{$i->Status}}</td>
+                  <td style="font-size:15px; color:rgb(133, 125, 125)"><a href="{{route('depts.edit', $i->id)}}"><i class="fa fa-ellipsis-v"></i></td>
                 </tr>
                 @empty
 
@@ -258,5 +254,3 @@
 </body>
 
 </html>
-
-

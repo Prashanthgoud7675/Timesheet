@@ -1202,7 +1202,7 @@
     
     
 
-
+    const conveyance = document.getElementById('conveyance').value = 1600;
     
     function epf() {
     
@@ -1225,7 +1225,7 @@
 
 
     
-    const conveyance = document.getElementById('conveyance').value = 1600;
+
     
     const medicalAllowance = document.getElementById('medicalAllowance').value = 1250;
     
@@ -1273,7 +1273,7 @@
             
             const net = Math.floor(salary -basic - hra - conveyance - medicalAllowance - epf);
             
-            const head = document.getElementById("taxOne").value = net;
+                      document.getElementById("taxOne").value = net;
             
             
             
@@ -1381,11 +1381,13 @@
                 const hra = parseInt(document.getElementById("hra").value);
                 const conveyance = parseInt(document.getElementById("conveyance").value);
                 const medicalAllowance = parseInt(document.getElementById("medicalAllowance").value);
+
+                const special = parseInt(document.getElementById("taxOne").value);
                 
     
                 const epf = parseInt(document.getElementById("epf").value);
  
-                const net = (basic + hra + conveyance + medicalAllowance    - epf);
+                const net = (basic + hra + conveyance + medicalAllowance + special    - epf);
                 
                 const head = document.getElementById('net').value = net;
                 

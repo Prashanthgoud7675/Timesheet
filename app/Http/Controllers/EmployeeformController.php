@@ -19,9 +19,17 @@ class EmployeeformController extends Controller
     public function index()
     {
 
-        $value = Employeeform::all();
+        $data = Employeeform::all();
 
-        return view('form.create',compact('value'));
+        $value = Bankform::all();
+
+        $form = Employementform::all();
+
+        $salary = Payrollform::all();
+
+        $deduction = Taxform::all();
+
+        return view('form.index',compact('data', 'value', 'form', 'salary', 'deduction'));
         
     }
 
@@ -186,8 +194,10 @@ class EmployeeformController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id, Employeeform $employee)
+    public function update(Request $request, $id,Employeeform $employee,Bankform $bank,Employementform $employement,Payrollform $payroll,Taxform $tax )
     {
+
+        
         $request->validate([
 
             'first' => 'required',
@@ -210,7 +220,16 @@ class EmployeeformController extends Controller
            'mobile' => 'required',
            'alternate' => 'required',
            'email' => 'required',
-           'accountholdername' => 'required',
+           
+            
+        ]);
+
+        $employee->update($request->all());
+
+
+        $request->validate([
+
+            'accountholdername' => 'required',
            'accountnumber' => 'required',
            'ifsccode' => 'required',
            'bankname' => 'required',
@@ -220,19 +239,75 @@ class EmployeeformController extends Controller
            'companyifsccode' => 'required',
            'companybankname' => 'required',
            'companybranchname' => 'required',
-           'workmobilenumber' => 'required',
-           'workemail' => 'required',
-           'hireddate' => 'required',
-           'employeeid' => 'required',
-           'designation' => 'required',
-           'department' => 'required',
-          
-                
+        ]);
+        
+        $bank->update($request->all());
+
+
+        $request->validate([
+
+            
+            'workmobilenumber' => 'required',
+            'workemail' => 'required',
+            'hireddate' => 'required',
+            'employeeid' => 'required',
+            'designation' => 'required',
+            'department' => 'required',
+            
+            
         ]);
 
-        $employee->create($request->all());
+        $employement->update($request->all());
 
-        return redirect()->route('welcome')
+        $request->validate([
+
+            'ctc' => 'required',
+            'uan' => 'required',
+            'basicsalary' => 'required',
+            'hra' => 'required',
+            'conveyance' => 'required',
+            'medicalallowance' => 'required',
+            'specialallowance' => 'required',
+            'professionaltax' => 'required',
+            'tds' => 'required',
+            'tdsonbonus' => 'required',
+            'foodvouchers' => 'required',
+            'epf' => 'required',
+            'loandeductions' => 'required',
+            'otherdeductions' => 'required',
+            'esi' => 'required',
+            'grosspay' => 'required',
+            'netpay' => 'required',
+            
+
+        ]);
+
+        $payroll->update($request->all());
+
+
+        $request->validate([
+
+            'pension' => 'required',
+            'newpension' => 'required',
+            'nsc' => 'required',
+            'ppf' => 'required',
+            'infrastructurebond' => 'required',
+            'childreneducation' => 'required',
+            'houseloan' => 'required',
+            'others' => 'required',
+            'insurancepremium' => 'required',
+            'epfvoluntarypf' => 'required',
+            'medicalinsuranceself' => 'required',
+            'medicalinsuranceparents' => 'required',
+            'medicalfordisable' => 'required',
+            'medicalexpenditure' => 'required',
+
+        ]);
+
+        $tax->update($request->all());
+        
+
+        return redirect()->route('form.index')
         ->withSuccessMessage('Company Info added Successfully');
     }
 

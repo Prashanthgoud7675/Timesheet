@@ -76,39 +76,48 @@
 
                
             <br><br>
-    <h3>Add New Company</h3>
+    <h3>Edit New Company</h3>
     <br>
-      <form method="post" action="{{ route('companies.store') }}">
-      <div class="form-group" style="margin-left:5%">
-              @csrf
 
+    
+      <form method="post" action="{{ url('orgs.update', $companies->id) }}">
+
+        @csrf
+        @method('PUT')
+
+
+      <div class="form-group" style="margin-left:5%">
               <label for="Client_ID">Client_ID</label>
-              <input type="text" class="form-control" name="Client_ID" style="width:400px;"/>
+              <input type="text" class="form-control" name="Client_ID" value="{{$companies->Client_ID}}" style="width:400px;color:black"/>
           </div>
           <div class="form-group" style="margin-left:5%">
               <label for="Branch_Code">Branch_Code</label>
-              <input type="text" class="form-control" name="Branch_Code" style="width:400px"/>
+              <input type="text" class="form-control" name="Branch_Code" value="{{$companies->Branch_Code}}" style="width:400px"/>
           </div>
           <div class="form-group" style="margin-left:5%">
               <label for="Company_Name">Company_Name</label>
-              <input type="text" class="form-control" name="Company_Name" style="width:400px"/>
+              <input type="text" class="form-control" name="Company_Name" value="{{$companies->Company_Name}}" style="width:400px"/>
           </div>
           <div class="form-group" style="margin-left:5%">
               <label for="Company_Address">Company_Address</label>
-              <input type="text" class="form-control" name="Company_Address" style="width:400px"/>
+              <input type="text" class="form-control" name="Company_Address" value="{{$companies->Company_Address}}" style="width:400px"/>
           </div>
           <div class="form-group" style="margin-left:5%">
               <label for="Next_Check_Date">Next_Check_Date</label>
-              <input type="date" class="form-control" name="Next_Check_Date" style="width:400px"/>
+              <input type="date" class="form-control" name="Next_Check_Date" value="{{$companies->Next_Check_Date}}" style="width:400px"/>
           </div>
           <div class="form-group" style="margin-left:5%">
               <label for="Status">Status</label>
-              <input type="text" class="form-control" name="Status" style="width:400px"/>
+              <input type="text" class="form-control" name="Status" value="{{$companies->Status}}" style="width:400px"/>
           </div>
           <br>
-          <button type="submit" class="btn btn-primary" style="margin-left:5%">Add</button>
+          <button type="submit" value="save" class="btn btn-primary" style="margin-left:5%">Add</button>
           <br> <br> <br>
+
+        
       </form>
+
+    
 
             </div>
 

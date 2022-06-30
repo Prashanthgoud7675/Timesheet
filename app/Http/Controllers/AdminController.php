@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Company;
+use App\Models\Companies;
 
 class AdminController extends Controller
 {
@@ -13,7 +13,7 @@ class AdminController extends Controller
     {
 
 
-     $data = Company::where([
+     $data = Companies::where([
         ['Client_ID' , '!=' , Null],
         ['Company_Name' , '!=' , Null],
         [function ($query) use ($request){

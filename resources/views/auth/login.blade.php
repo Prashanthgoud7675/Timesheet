@@ -24,14 +24,16 @@
     <title>XSILICA HRMS</title>
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&family=Montserrat&family=Quintessential&family=Ubuntu+Mono&display=swap" rel="stylesheet">
 
 </head>
 
-<body style="background-color:whitesmoke">
+<body style="background-color:whitesmoke;font-family: 'Montserrat', sans-serif;">
 
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" style="font-family: 'Montserrat', sans-serif;">
         
 
         <div class="col-md-6" style="margin-top: 9%;background-color:white;width:500px;margin-bottom:5%;border-radius:10px; box-shadow: 0px 10px 50px rgba(180, 174, 174, 0.7);">
@@ -102,7 +104,7 @@
                                     </div>
                             <br>
 
-                            <input type="checkbox" name="remember" style="margin-bottom:15px"> Remember My User ID <i class="fa fa-question-circle"></i>
+                            <input type="checkbox" name="remember" style="margin-bottom:15px;margin-left:3%"> Remember My User ID <i class="fa fa-question-circle"></i>
 
                             <br>
                         
@@ -113,7 +115,7 @@
 
                             
 
-                            <h1 style="color:#052CA3">FORGOT YOUR PASSWORD?</h1>
+                            <h1 style="color:#052CA3;font-size:20px;font-weight:600">Forgot Your Password?</h1>
 
                             </div>
 
@@ -129,8 +131,8 @@
 <br>
 <div class="flex justify-center">
 
-                          <h1 class="text-center" style="font-size: 17px; font-weight:600; margin-left: 0%; margin-bottom:5%;color:black;text-decoration:underline"> New User?</h1> 
-                            <i class="fa fa-user-plus" style="color:#052CA3;margin-left:1%;margin-top:1%">     <a href="{{ route('register') }}" > CREATE ACCOUNT </a> </i>
+                          <h1 class="text-center" style="font-size: 17px; font-weight:600; margin-top: 1%; margin-bottom:4%;color:black;text-decoration:underline"> New User?</h1> 
+                            <i class="fa fa-user-plus" style="color:#052CA3;margin-left:1%;margin-top:1%">     <a href="{{ route('register') }}" style="font-family: 'Montserrat', sans-serif;font-size:17px" > Create Account</a> </i>
 
 </div>
 <br>
