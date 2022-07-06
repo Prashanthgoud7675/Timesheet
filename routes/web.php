@@ -34,9 +34,13 @@ use App\Http\Controllers\DeptController;
 
 
 
+Route::get('demo', function () {
+    return view('demo');
+});
 
-
-
+Route::get('sample', function () {
+    return view('sample');
+});
 
 
 
