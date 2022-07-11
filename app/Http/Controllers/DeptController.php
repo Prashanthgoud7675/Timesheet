@@ -54,7 +54,7 @@ class DeptController extends Controller
 
         $dept->create($request->all());
 
-        return redirect()->route('admin.index')
+        return redirect('admin')
         ->withSuccessMessage('Department added Successfully');
     }
 
@@ -103,7 +103,7 @@ class DeptController extends Controller
 
         $dept->update($request->all());
 
-        return redirect()->route('admin.index')
+        return redirect('admin')
         ->withSuccessMessage('Department edited Successfully');
     }
 

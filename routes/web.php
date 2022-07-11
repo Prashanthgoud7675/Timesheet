@@ -19,6 +19,8 @@ use App\Http\Controllers\CustomSearchController;
 use App\Http\Controllers\EmployeeformController;
 use App\Http\Controllers\EmployeController;
 use App\Http\Controllers\DeptController;
+use App\Http\Controllers\TimesheetController;
+use App\Http\Controllers\WeekDataController;
 
 
 /*
@@ -104,3 +106,9 @@ Route::get('/superadmin', [App\Http\Controllers\SuperAdminController::class, 'in
 Route::resource('/form', EmployeeformController::class);
 
 Route::resource('/depts', DeptController::class);
+
+
+Route::get('/sample', [TimesheetController::class, 'index']);
+Route::post('/sample', [TimesheetController::class, 'store']);
+
+Route::get('/timesheet', [WeekDataController::class, 'index']);

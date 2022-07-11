@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('timesheet', function (Blueprint $table) {
+        Schema::create('timesheets', function (Blueprint $table) {
             $table->id();
-            $table->date('date')->nullable;
+            $table->string('Date')->nullable;
+            $table->string('Regular')->nullable;
             $table->string('Overtime')->nullable;
             $table->string('Sick')->nullable;
             $table->string('Vacation')->nullable;
@@ -34,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('timesheet');
+        Schema::dropIfExists('timesheets');
     }
 };
