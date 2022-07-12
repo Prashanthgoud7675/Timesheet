@@ -11,6 +11,6 @@ class WeekDataController extends Controller
     public function index(){
         $data = WeekData::paginate(7);
 
-        return view('timesheet', compact('data'));
+        return view('attendances', compact('data'));
     }
 }
