@@ -16,7 +16,7 @@ class AttendanceController extends Controller
      */
     public function index()
     {
-        $data = WeekData::paginate(7);
+        $data = WeekData::all();
         return view('attendances.index', compact('data') );
     }
 
@@ -133,4 +133,6 @@ class AttendanceController extends Controller
 
         return redirect()->route('attendances.index');
     }
+
+   
 }

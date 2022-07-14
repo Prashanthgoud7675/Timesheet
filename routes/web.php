@@ -109,8 +109,8 @@ Route::resource('/form', EmployeeformController::class);
 Route::resource('/depts', DeptController::class);
 
 Route::resource('/attendances', AttendanceController::class);
+Route::post('/attendances', [WeekDataController::class, 'search']);
 
 Route::get('/sample', [TimesheetController::class, 'index']);
 Route::post('/sample', [TimesheetController::class, 'store']);
 
-Route::get('/timesheet', [WeekDataController::class, 'index']);

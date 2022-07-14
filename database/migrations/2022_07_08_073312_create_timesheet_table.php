@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('timesheets', function (Blueprint $table) {
             $table->id();
-            $table->string('Date')->nullable;
+            $table->date('Date')->nullable;
             $table->string('Regular')->nullable;
             $table->string('Overtime')->nullable;
             $table->string('Sick')->nullable;
@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('Unpaid')->nullable;
             $table->string('other')->nullable;
             $table->string('Total')->nullable;
+
             $table->timestamps();
         });
     }

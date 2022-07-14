@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Helper;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -35,14 +36,25 @@ class RegisterController extends Controller
             'password' => 'required|confirmed'
         ]);
 
-        user::create([
-            'name' =>$request->name,
-            'Companyname' =>$request->Companyname,
-            'email' =>$request->email,
-        
-            'password' =>Hash::make($request->password)
+        $name = $request->name;
+        $Companyname = $request->Companyname;
+        $email = $request->email;
+        $password  = Hash::make($request->password);
+       
 
-        ] );
+        
+        
+        $user_Id = Helper::IDGenerator(new User, 'user_Id', 5, 'USER'); /** Generate id */
+        $q = new User;
+        $q->user_Id = $user_Id;
+        $q->name = $name;
+        $q->Companyname = $Companyname;
+        $q->email = $email;
+        $q->password = $password;
+   
+        $q->save();
+
+       
 
             auth()->attempt($request->only('email','password'));
 

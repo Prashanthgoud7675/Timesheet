@@ -63,7 +63,7 @@
                     weekSix = new Date(myDate.getFullYear(), myDate.getMonth(), myDate.getDate() -
                         myDate.getDay() + 5);
 
-                    var dateFormat = "dd/mm/yy";
+                    var dateFormat = "yy/mm/dd";
                     $("#start").val($.datepicker.formatDate(dateFormat, weekStart));
                     $("#two").val($.datepicker.formatDate(dateFormat, weekTwo));
                     $("#three").val($.datepicker.formatDate(dateFormat, weekThree));
@@ -196,39 +196,39 @@
                         <tr>
                             <th scope="row">Overtime</th>
                             <td>
-                                <div style="padding:2px"><input type="text" name="Overtime[]" id="overTimeSun"
+                                <div style="padding:2px"><input type="text" value="0" name="Overtime[]" id="overTimeSun"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
 
                             <td>
                                 <div style="padding:2px">
-                                    <input type="text" name="Overtime[]" id="overTimeMon"
+                                    <input type="text" name="Overtime[]" value="0" id="overTimeMon"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text" name="Overtime[]" id="overTimeTue"
+                                <div style="padding:2px"><input type="text" value="0" name="Overtime[]" id="overTimeTue"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text" name="Overtime[]" id="overTimeWed"
+                                <div style="padding:2px"><input type="text" value="0" name="Overtime[]" id="overTimeWed"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text" name="Overtime[]" id="overTimeThu"
+                                <div style="padding:2px"><input type="text" value="0" name="Overtime[]" id="overTimeThu"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text" name="Overtime[]" id="overTimeFri"
+                                <div style="padding:2px"><input type="text" value="0" name="Overtime[]" id="overTimeFri"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text" name="Overtime[]" id="overTimeSat"
+                                <div style="padding:2px"><input type="text" value="0" name="Overtime[]" id="overTimeSat"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
@@ -239,37 +239,37 @@
                             <th scope="row">Sick</th>
 
                             <td>
-                                <div style="padding:2px"><input type="text" name="Sick[]" id="sickSun"
+                                <div style="padding:2px"><input type="text" value="0" name="Sick[]" id="sickSun"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text"  name="Sick[]" id="sickMon"
+                                <div style="padding:2px"><input type="text" value="0" name="Sick[]" id="sickMon"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text"  name="Sick[]" id="sickTue"
+                                <div style="padding:2px"><input type="text" value="0" name="Sick[]" id="sickTue"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text"  name="Sick[]" id="sickWed"
+                                <div style="padding:2px"><input type="text" value="0" name="Sick[]" id="sickWed"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text"  name="Sick[]" id="sickThu"
+                                <div style="padding:2px"><input type="text" value="0" name="Sick[]" id="sickThu"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text"  name="Sick[]" id="sickFri"
+                                <div style="padding:2px"><input type="text" value="0" name="Sick[]" id="sickFri"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text"  name="Sick[]" id="sickSat"
+                                <div style="padding:2px"><input type="text" value="0" name="Sick[]" id="sickSat"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
@@ -280,37 +280,37 @@
                             <th scope="row">Vacation</th>
 
                             <td>
-                                <div style="padding:2px"><input type="text" name="Vacation[]" id="vacationSun"
+                                <div style="padding:2px"><input type="text" value="0" name="Vacation[]" id="vacationSun"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text" name="Vacation[]" id="vacationMon"
+                                <div style="padding:2px"><input type="text" value="0" name="Vacation[]" id="vacationMon"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text" name="Vacation[]" id="vacationTue"
+                                <div style="padding:2px"><input type="text" value="0" name="Vacation[]" id="vacationTue"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text" name="Vacation[]" id="vacationWed"
+                                <div style="padding:2px"><input type="text" value="0" name="Vacation[]" id="vacationWed"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text" name="Vacation[]" id="vacationThu"
+                                <div style="padding:2px"><input type="text" value="0" name="Vacation[]" id="vacationThu"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text" name="Vacation[]" id="vacationFri"
+                                <div style="padding:2px"><input type="text" value="0" name="Vacation[]" id="vacationFri"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text" name="Vacation[]" id="vacationSat"
+                                <div style="padding:2px"><input type="text" value="0" name="Vacation[]" id="vacationSat"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
@@ -323,37 +323,37 @@
                             <th scope="row">Holiday</th>
 
                             <td>
-                                <div style="padding:2px"><input type="text" name="Holiday[]" id="holidaySun"
+                                <div style="padding:2px"><input type="text" value="0" name="Holiday[]" id="holidaySun"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text"  name="Holiday[]" id="holidayMon"
+                                <div style="padding:2px"><input type="text" value="0"  name="Holiday[]" id="holidayMon"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text"  name="Holiday[]" id="holidayTue"
+                                <div style="padding:2px"><input type="text" value="0" name="Holiday[]" id="holidayTue"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text"  name="Holiday[]" id="holidayWed"
+                                <div style="padding:2px"><input type="text" value="0"  name="Holiday[]" id="holidayWed"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text"  name="Holiday[]" id="holidayThu"
+                                <div style="padding:2px"><input type="text" value="0" name="Holiday[]" id="holidayThu"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text"  name="Holiday[]" id="holidayFri"
+                                <div style="padding:2px"><input type="text" value="0"  name="Holiday[]" id="holidayFri"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text"  name="Holiday[]" id="holidaySat"
+                                <div style="padding:2px"><input type="text" value="0"  name="Holiday[]" id="holidaySat"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
@@ -366,37 +366,37 @@
                             <th scope="row">Unpaid</th>
 
                             <td>
-                                <div style="padding:2px"><input type="text" name="Unpaid[]" id="unpaidSun"
+                                <div style="padding:2px"><input type="text" value="0" name="Unpaid[]" id="unpaidSun"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text" name="Unpaid[]" id="unpaidMon"
+                                <div style="padding:2px"><input type="text" value="0" name="Unpaid[]" id="unpaidMon"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text" name="Unpaid[]" id="unpaidTue"
+                                <div style="padding:2px"><input type="text" value="0" name="Unpaid[]" id="unpaidTue"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text" name="Unpaid[]" id="unpaidWed"
+                                <div style="padding:2px"><input type="text" value="0" name="Unpaid[]" id="unpaidWed"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text" name="Unpaid[]" id="unpaidThu"
+                                <div style="padding:2px"><input type="text" value="0" name="Unpaid[]" id="unpaidThu"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text" name="Unpaid[]" id="unpaidFri"
+                                <div style="padding:2px"><input type="text" value="0" name="Unpaid[]" id="unpaidFri"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text" name="Unpaid[]" id="unpaidSat"
+                                <div style="padding:2px"><input type="text" value="0" name="Unpaid[]" id="unpaidSat"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
@@ -409,37 +409,37 @@
                             <th scope="row">other</th>
 
                             <td>
-                                <div style="padding:2px"><input type="text" name="other[]" id="otherSun"
+                                <div style="padding:2px"><input type="text" value="0" name="other[]" id="otherSun"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text"  name="other[]" id="otherMon"
+                                <div style="padding:2px"><input type="text" value="0"  name="other[]" id="otherMon"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text"  name="other[]" id="otherTue"
+                                <div style="padding:2px"><input type="text" value="0"  name="other[]" id="otherTue"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text"  name="other[]" id="otherWed"
+                                <div style="padding:2px"><input type="text" value="0"  name="other[]" id="otherWed"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text"  name="other[]" id="otherThu"
+                                <div style="padding:2px"><input type="text" value="0"  name="other[]" id="otherThu"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text"  name="other[]" id="otherFri"
+                                <div style="padding:2px"><input type="text" value="0"  name="other[]" id="otherFri"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>
                             <td>
-                                <div style="padding:2px"><input type="text"  name="other[]" id="otherSat"
+                                <div style="padding:2px"><input type="text" value="0"  name="other[]" id="otherSat"
                                         style="width:60px;text-align:center;border:none">
                                 </div>
                             </td>

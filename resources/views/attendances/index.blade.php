@@ -20,68 +20,123 @@
 <body>
     <br><br><br>
 
+    <form action="{{url('attendances')}}" method="POST">
+        @csrf
+        <input type="date" name="fromDate" required>
+        <input type="date" name="toDate" required>
+        <button type="submit" name="search">submit</button>
+    </form>
+
     <div class="row justify-content-center">
         <div class="col-md-8">
 
             <div class="table-responsive">
                 <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Regular</th>
-                            <th>OverTime</th>
-                            <th>Sick</th>
-                            <th>Vacation</th>
-                            <th>Holiday</th>
-                            <th>Unpaid</th>
-                            <th>Other</th>
-                            <th>Total</th>
-                            <th>actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                    <tr>
+                        <th scope="row">Date</th>
+
                         @foreach ($data as $i)
-                        <tr>
                             <td>{{$i->Date}}</td>
+                        @endforeach
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Regular</th>
+
+                        @foreach ($data as $i)
                             <td>{{$i->Regular}}</td>
+                        @endforeach
+                    </tr>
+
+                    <tr>
+                        <th scope="row">OverTime</th>
+
+                        @foreach ($data as $i)
                             <td>{{$i->Overtime}}</td>
+                        @endforeach
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Sick</th>
+
+                        @foreach ($data as $i)
                             <td>{{$i->Sick}}</td>
+                        @endforeach
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Vacation</th>
+
+                        @foreach ($data as $i)
                             <td>{{$i->Vacation}}</td>
+                        @endforeach
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Holiday</th>
+
+                        @foreach ($data as $i)
                             <td>{{$i->Holiday}}</td>
+                        @endforeach
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Unpaid</th>
+
+                        @foreach ($data as $i)
                             <td>{{$i->Unpaid}}</td>
+                        @endforeach
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Other</th>
+
+                        @foreach ($data as $i)
                             <td>{{$i->other}}</td>
+                        @endforeach
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Total</th>
+
+                        @foreach ($data as $i)
                             <td>{{$i->Total}}</td>
+                        @endforeach
+                    </tr>
 
-                            <td>
-                                <form action="" method="POST">
+                    <tr>
 
+                        <th>Actions</th>
+                        @foreach ($data as $i)
 
-
-
-
-                                    <a class="btn btn-primary"
-                                        href="{{route('attendances.edit', $i->id)}}">Edit</a>
-
-
+                        <td>
+                            <form action="" method="POST">
 
 
-                                    @csrf
-                                    @method('DELETE')
 
-                                    <button type="submit" class="btn btn-danger active">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
+
+
+                                <a class="btn btn-primary"
+                                    href="{{route('attendances.edit', $i->id)}}">Edit</a>
+
+
+
+
+                                @csrf
+                                @method('DELETE')
+
+                                <button type="submit" class="btn btn-danger active">Delete</button>
+                            </form>
+                        </td>
                             
                         @endforeach
-                    </tbody>
+
+                    </tr>
                 </table>
-                <div>
-        
-                    {{$data->links()}}
-        
-                </div>
+               
             </div>
+
+            
             
 
         </div>

@@ -52,10 +52,29 @@ class DeptController extends Controller
             'Status' => 'required',
         ]);
 
-        $dept->create($request->all());
+        $Client_ID = $request->Client_ID;
+        $Branch_Code = $request->Branch_Code;
+        $Company_Name = $request->Company_Name;
+        $Company_Address = $request->Company_Address;
+        $Next_Check_Date = $request->Next_Check_Date;
+        $Status = $request->Status;
+
+        
+        
+        $Company_Id = Helper::IDGenerator(new Dept, 'Company_Id', 5, 'XSS'); /** Generate id */
+        $q = new Dept;
+        $q->Company_Id = $Company_Id;
+        $q->Client_ID = $Client_ID;
+        $q->Branch_Code = $Branch_Code;
+        $q->Company_Name = $Company_Name;
+        $q->Company_Address = $Company_Address;
+        $q->Next_Check_Date = $Next_Check_Date;
+        $q->Status = $Status;
+        $q->save();
+
 
         return redirect('admin')
-        ->withSuccessMessage('Department added Successfully');
+        ->withSuccessMessage('company added Successfully');
     }
 
     /**
