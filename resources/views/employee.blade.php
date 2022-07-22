@@ -37,6 +37,9 @@
 
 <body style="background-color:whitesmoke">
 
+
+    
+
     <section style="background-color:#002F6C;">
 
         <nav class="navbar navbar-expand-lg  navbar-light fixed-top" style="background-color: #002F6C;height:50px">
@@ -95,10 +98,6 @@
                             
                         @endguest
 
-                        
-                       
-
-
                     </ul>
                 </div>
             </div>
@@ -111,19 +110,17 @@
 
         <hr style="width: 88%; margin-left: 5%">
 
-        <select style="background-color:#002F6C; color:white;margin-top:2%; margin-bottom:2%; margin-left:3%; border:none">
-            <option value="Company List">Company List</option>
-        </select>
-        <select style="background-color:#002F6C; color:white;margin-top:2%; margin-bottom:2%; margin-left:2%; border:none">
-            <option value="Company List">Home</option>
-        </select>
+        <div class="flex" style="display: flex">
 
-        <a href="onboard">
-            <select style="background-color:#002F6C; color:white;margin-top:2%; margin-bottom:2%; margin-left:2%; border:none">
-                <option value="Company List"> Employees </option>
-            </select>
-        </a>
+            <ul style="  display: flex; justify-content:space-around; list-style-type:none;">
 
+                <li style=" list-style:none; margin-left:10rem" > <a href="onboard" style=" color:white; text-decoration:none"> Onboard </a> </li>
+
+                <li style="list-style:none; margin-left:2rem"> <a href="sample" style=" color:white; text-decoration:none"> Timesheet </a> </li>
+
+            </ul>   
+        
+        </div>
 
         <br>
         <br>

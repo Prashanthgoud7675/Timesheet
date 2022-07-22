@@ -82,10 +82,10 @@
                         @else
                         <li class="nav-item-active " style=" margin-left: 35%">
                             <a> <i class="fa fa-user-circle-o"
-                                    style="color: rgb(212, 212, 215); font-size: 35px"></i></a>
+                                    style="color: rgb(212, 212, 215); font-size: 35px; color: rgb(80, 77, 77)"></i></a>
                         </li>
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="color:white;">
+                            <li class="nav-item dropdown" >
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="color:black;">
                                     {{ Auth::user()->name }}
                                 </a>
 
@@ -120,135 +120,128 @@
         
         <hr style="width: 88%; margin-left: 5%;">
 
-        <li style="background-color:#002F6C; color:white;margin-top:2%; margin-left:10%;list-style:none;font-size:15px;">
-            <a href="filter" style="color:white;text-decoration:none"> Employees </a>
-    </li>
+ 
+</section>
+<br>
 
-<br><br>
-
-
-    </section>
-
-    <br>
-    <br>
-
-
-    <section>
-        <div class="row justify-content-center">
-            <div class="col-md-10"
-                style="background-color: white; border-radius:10px;  box-shadow: 0px 10px 50px rgba(180, 174, 174, 0.7);">
-                <h3 class="breadcrumb" style="background-color: #1956a4; font-weight:600; color:white">Company List <a href="{{route('depts.create')}}"> <i
-                        class="fa fa-plus-circle"
-                        style="font-size: 25px; color: rgb(212, 212, 215); margin-left:80%;float:left"> </i> </a> </h3>
-
-                <br>
-                <br>
-                <div style="background-color:  rgb(212, 212, 215); margin-bottom:3%">
-
-
-                    <form action="admin " method="GET" role="search">
-                        <div  style="padding-top:2%; display:flex">
-                           
-                          <label for="search" style="margin-left: 2%">Search: </label>
-          
-                          <input type="text" name="term" placeholder="" id="term"
-                          style="height:40px;width:400px;background-color: whitesmoke;border-radius: 8px; margin-left:6%; width:30%">
-          
-                          <h5 style="margin-left:3%;"> <b> Enter Client_ID or Company Name and then click Enter <b></h5>
-          
-            
-          
-                        </div>
-                        </form>
-                        
-                   
-                    <br>
-                    <br>
-
-                
-
-                    <div style="display:flex;">
-
-                       
-                        <label for="sort by" style="margin-left: 2%">Sort by: </label>
-
-                        <div style="margin-left: 6%; width:30%;">
-                            <select name="filter_country" id="filter_country" class="form-control" 
-                                style=" height:42px">
-                                <option value="">Select Company_Name</option>
-                                @foreach ($data as $i)
-                                    <option name="country" value="{{ $i->Company_Name }}">{{ $i->Company_Name }}</option>
-                                @endforeach
+<div class="container">
+<div class="row justify-content-center">
+    
+    <div class="col-md-10"style="background-color:  rgb(212, 212, 215);border-radius:10px;padding-top:2%;padding-bottom:2%;">
+    <form action="{{ ('filter') }}" method="GET"  >
+<div class="flex" style="display:flex">
+                        <label style="margin-top:1%">Select:</label>
+                        <select name="category" id="category" class="form-control" 
+                                style=" height:42px;width:200px;margin-left:10px">
+                                <option value=""> Company Name</option>
+                                @if(count($categories)>0)
+                            @foreach($categories as $category)
+                            <option value="{{ $category['Company_Code'] }}">
+                                {{ $category->Company_Name }}
+                            </option>
+                                    @endforeach
+                            @endif
                             </select>
+                            </div>
+                    </form>
 
-                            
-                        </div>
+    </div>
+</div>
 
-                        <h5 style="margin-left:3%; font-weight:600"> Select the company name and then click find </h5>
+                   <br><br><br>
 
-                    </div>
-
-                    <br>
-                    <br>
-
-                    <button type="submit" name="filter" id="filter" class="btn btn-success "
-                        style="font-size: 20px; margin-left:80%; width:12%; margin-bottom:2%">Find</button>
-                
+        <div class="row justify-content-center">
+            <div class="col-md-10" >
+                <div class="card">
                     
 
-                </div>
-                <br>
+                    <div class="table-responsive">
 
-                <div class="table-responsive">
-                    <table  class="table table-bordered table-striped">
+
+                    <table class="table table-stripped">
                         <thead>
                             <tr>
-                                <th scope="col">Company Code</th>
- 
-                                <th scope="col">Company Name</th>
-                                <th scope="col">Company Address</th>
-                                <th scope="col">Next Check Date</th>
-                                <th scope="col">Status</th>
+                                <th>No</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Company Name</th>
+                                <th>Registration</th>
+                                <th>Paperless</th>
+                                <th>Contact Info</th>
+                                <th>Employement Type</th>
+                                <th>Status</th>
+                                <th>Company Code</th>
                             </tr>
                         </thead>
-
-                        <tbody>
-                            @forelse ($data as $i)
-                  
-               
-                <tr>
-                 
-                  <td style="font-size:15px; color:rgb(133, 125, 125)">{{$i->Company_Code}}</td>
-
-                  <td style="color: rgb(49, 143, 243); font-size:15px"> <a href=""> {{$i->Company_Name}} </a> </td>
-                  <td style="font-size:15px; color:rgb(133, 125, 125)">{{$i->Company_Address}}</td>
-                  <td style="font-size:15px; color:rgb(133, 125, 125)">{{$i->Next_Check_Date}}</td>
-                  <td style="font-size:15px; color:rgb(133, 125, 125)">{{$i->Status}}</td>
-                  <td style="font-size:15px; color:rgb(133, 125, 125)"><a href="{{route('depts.edit', $i->id)}}"><i class="fa fa-ellipsis-v"></i></td>
-                </tr>
-                @empty
-
-
-                <p style="margin-left: 10%; font-size:17px; font-weight:600; "> No Data Found</p>
-
-                @endforelse
-                           
+                        <tbody id="tbody">
+                            @if(count($products)>0)
+                            @foreach($products as $product)
+                            <tr>
+                                <td>{{$product['id']}}</td>
+                                <td>{{$product['First_Name']}}</td>
+                                <td>{{$product['Last_Name']}}</td>
+                                <td>{{$product['Company_Name']}}</td>
+                                <td>{{$product['Registration']}}</td>
+                                <td>{{$product['Paperless']}}</td>
+                                <td>{{$product['contact_info']}}</td>
+                                <td>{{$product['employment_type']}}</td>
+                                <td>{{$product['Status']}}</td>
+                                <td>{{$product['company_id']}}</td>
+                            </tr>
+                            @endforeach
+                            @endif
                         </tbody>
-
-
                     </table>
+                    </div>
+
                 </div>
-
-
-
-                <br>
-                <br>
-
-
             </div>
         </div>
-    </section>
+    </div>
+    </div>
+    <script>
+    $(document).ready(function() {
 
+        $("#category").on('change', function() {
+            var category = $(this).val();
+            $.ajax({
+                url: "{{route('filter')}}",
+                type: "GET",
+                data: {
+                    'category': category
+                },
+                success: function(data) {
+                    var products = data.products;
+                    var html = '';
+                    if (products.length > 0) {
+                        for (let i = 0; i < products.length; i++) {
+                            html += '<tr>\
+                                             <td>' + (i + 1) + '</td>\
+                                             <td>' + products[i]['First_Name'] + '</td>\
+                                             <td>' + products[i]['Last_Name'] + '</td>\
+                                             <td>' + products[i]['Company_Name'] + '</td>\
+                                             <td>' + products[i]['Registration'] + '</td>\
+                                             <td>' + products[i]['Paperless'] + '</td>\
+                                             <td>' + products[i]['contact_info'] + '</td>\
+                                             <td>' + products[i]['employment_type'] + '</td>\
+                                             <td>' + products[i]['Status'] + '</td>\
+                                            <td>' + products[i]['company_id'] + '</td>\
+                                            </tr>';
+                        }
+
+
+                    } 
+                    else {
+                        html += '<tr>\
+                         <td>No data</td>\
+                         </tr>';
+                    }
+                    $("#tbody").html(html);
+                }
+            });
+        });
+    });
+    </script>
 
 
 

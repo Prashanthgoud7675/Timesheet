@@ -77,13 +77,10 @@
     @method('PUT')
     <br><br>
     <div class="form-group" style="margin-left:5%">
-               <label for="Client_ID">Client_ID</label>
-              <input type="text" class="form-control" name="Client_ID" style="width:400px;" value="{{$dept->Client_ID}}"/>
+               <label for="Company_Code">Company_Code</label>
+              <input type="text" class="form-control" name="Company_Code" style="width:400px;" value="{{$dept->Company_Code}}"/>
           </div>
-          <div class="form-group" style="margin-left:5%">
-              <label for="Branch_Code">Branch_Code</label>
-              <input type="text" class="form-control" name="Branch_Code" style="width:400px"  value="{{$dept->Branch_Code}}"/>
-          </div>
+  
           <div class="form-group" style="margin-left:5%">
               <label for="Company_Name">Company_Name</label>
               <input type="text" class="form-control" name="Company_Name" style="width:400px" value="{{$dept->Company_Name}}"/>

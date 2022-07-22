@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('timesheets', function (Blueprint $table) {
             $table->id();
+            $table->string('empid')->nullable;
             $table->date('Date')->nullable;
             $table->string('Regular')->nullable;
             $table->string('Overtime')->nullable;

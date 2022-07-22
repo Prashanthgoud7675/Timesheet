@@ -44,28 +44,25 @@ class DeptController extends Controller
         $request->validate([
 
             
-            'Client_ID' => 'required',
-            'Branch_Code' => 'required',
+            'Company_Code' => 'required',
+           
             'Company_Name' => 'required',
             'Company_Address' => 'required',
             'Next_Check_Date' => 'required',
             'Status' => 'required',
         ]);
 
-        $Client_ID = $request->Client_ID;
-        $Branch_Code = $request->Branch_Code;
+        $Company_Code = $request->Company_Code;
         $Company_Name = $request->Company_Name;
         $Company_Address = $request->Company_Address;
         $Next_Check_Date = $request->Next_Check_Date;
         $Status = $request->Status;
-
         
         
         $Company_Id = Helper::IDGenerator(new Dept, 'Company_Id', 5, 'XSS'); /** Generate id */
         $q = new Dept;
         $q->Company_Id = $Company_Id;
-        $q->Client_ID = $Client_ID;
-        $q->Branch_Code = $Branch_Code;
+        $q->Company_Code = $Company_Code; 
         $q->Company_Name = $Company_Name;
         $q->Company_Address = $Company_Address;
         $q->Next_Check_Date = $Next_Check_Date;
@@ -111,8 +108,8 @@ class DeptController extends Controller
         $request->validate([
 
              
-            'Client_ID' => 'required',
-            'Branch_Code' => 'required',
+            'Company_Code' => 'required',
+            
             'Company_Name' => 'required',
             'Company_Address' => 'required',
             'Next_Check_Date' => 'required',

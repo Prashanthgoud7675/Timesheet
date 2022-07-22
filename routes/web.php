@@ -22,6 +22,7 @@ use App\Http\Controllers\DeptController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\TimesheetController;
 use App\Http\Controllers\WeekDataController;
+use App\Http\Controllers\CompanyEmployesController;
 
 
 /*
@@ -100,6 +101,7 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin')->middleware('auth');
+
 Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('user')->middleware('auth');
 Route::get('/superadmin', [App\Http\Controllers\SuperAdminController::class, 'index'])->name('superadmin')->middleware('auth');
 
@@ -114,3 +116,4 @@ Route::post('/attendances', [WeekDataController::class, 'search']);
 Route::get('/sample', [TimesheetController::class, 'index']);
 Route::post('/sample', [TimesheetController::class, 'store']);
 
+Route::get('filter', [CompanyEmployesController::class, 'filterProduct'])->name('filter');

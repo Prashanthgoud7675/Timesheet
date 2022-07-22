@@ -15,6 +15,7 @@ class TimesheetController extends Controller
 
     public function store(Request $request)
     {
+        $empid = $request->empid;
         $Regular = $request->Regular;
         $Overtime = $request->Overtime;
         $Sick = $request->Sick;
@@ -23,10 +24,13 @@ class TimesheetController extends Controller
         $Unpaid = $request->Unpaid;
         $other = $request->other;
         $Total = $request->Total;
-        $Date = $request->Date;
+        $Date = $request->Date;  
 
+   
+        
         for ($i=0; $i < count($Regular); $i++){
             $datasave = [
+                'empid' => $empid,
                 'Regular'  => $Regular[$i],
                 'Overtime'  => $Overtime[$i],
                 'Sick'  => $Sick[$i],

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/start/jquery-ui.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Document</title>
 
@@ -97,427 +97,481 @@
 </head>
 
 <body>
-<br><br><br>
-    <div class="row">
-        <div class="col-md-3" style="margin-left: 5%">
-             <br><br><br><br>
-            <div id="weekpicker"></div>
+
+    <section style="background-color:#002F6C;">
+
+        <div class="container" style="padding-top: 1%; padding-bottom:1%">
+
+
+
+            <h1 style="font-size: 20px; color:white; font-weight:600"> <i class="fa fa-close"
+                    style="font-size: 20px; color:white; margin-right:1%;"></i> Timesheet Setup</h1>
+
+
 
         </div>
 
-        <div class="col-md-8">
+    </section>
 
-            <form action="sample" method="POST">
-                @csrf
-           
-            <div class="table-responsive">
-
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th></th>
-
-                            <th scope="col"><div style="padding:2px"><input type="text" name="Date[]" id="start"
-                                style="width:85px;text-align:center;border:none">
-                        </div></th>
-                            <th scope="col"><div style="padding:2px"><input type="text" name="Date[]" id="two"
-                                style="width:85px;text-align:center;border:none">
-                        </div></th>
-                            <th scope="col"><div style="padding:2px"><input type="text" name="Date[]" id="three"
-                                style="width:85px;text-align:center;border:none">
-                        </div></th>
-                            <th scope="col"><div style="padding:2px"><input type="text" name="Date[]" id="four"
-                                style="width:85px;text-align:center;border:none">
-                        </div></th>
-                            <th scope="col"><div style="padding:2px"><input type="text" name="Date[]" id="five"
-                                style="width:85px;text-align:center;border:none">
-                        </div></th>
-                            <th scope="col"><div style="padding:2px"><input type="text" name="Date[]" id="six"
-                                style="width:85px;text-align:center;border:none">
-                        </div></th>
-                            <th scope="col"><div style="padding:2px"><input type="text" name="Date[]" id="end"
-                                style="width:85px;text-align:center;border:none">
-                        </div></th>
-                        </tr>
-
-                        <tr>
-                            <th></th>
-                            <th scope="col">Sun</th>
-                            <th scope="col">Mon</th>
-                            <th scope="col">Tue</th>
-                            <th scope="col">Wed</th>
-                            <th scope="col">Thur</th>
-                            <th scope="col">Fri</th>
-                            <th scope="col">Sat</th>
-                        </tr>
-
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Regular</th>
-                            <td>
-                                <div style="padding:2px"><input type="text" name="Regular[]" id="regularSun"
-                                    style="width:60px;text-align:center;border:none">
-                            </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" name="Regular[]" id="regularMon"
-                                    style="width:60px;text-align:center;border:none">
-                            </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" name="Regular[]" id="regularTue"
-                                    style="width:60px;text-align:center;border:none">
-                            </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" name="Regular[]" id="regularWed"
-                                    style="width:60px;text-align:center;border:none">
-                            </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" name="Regular[]" id="regularThu"
-                                    style="width:60px;text-align:center;border:none">
-                            </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" name="Regular[]" id="regularFri"
-                                    style="width:60px;text-align:center;border:none">
-                            </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" name="Regular[]" id="regularSat"
-                                    style="width:60px;text-align:center;border:none">
-                            </div>
-                            </td>
-
-
-                        </tr>
-                        <tr>
-                            <th scope="row">Overtime</th>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Overtime[]" id="overTimeSun"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-
-                            <td>
-                                <div style="padding:2px">
-                                    <input type="text" name="Overtime[]" value="0" id="overTimeMon"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Overtime[]" id="overTimeTue"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Overtime[]" id="overTimeWed"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Overtime[]" id="overTimeThu"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Overtime[]" id="overTimeFri"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Overtime[]" id="overTimeSat"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-
-
-                        </tr>
-                        <tr>
-                            <th scope="row">Sick</th>
-
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Sick[]" id="sickSun"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Sick[]" id="sickMon"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Sick[]" id="sickTue"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Sick[]" id="sickWed"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Sick[]" id="sickThu"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Sick[]" id="sickFri"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Sick[]" id="sickSat"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-
-
-                        </tr>
-                        <tr>
-                            <th scope="row">Vacation</th>
-
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Vacation[]" id="vacationSun"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Vacation[]" id="vacationMon"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Vacation[]" id="vacationTue"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Vacation[]" id="vacationWed"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Vacation[]" id="vacationThu"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Vacation[]" id="vacationFri"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Vacation[]" id="vacationSat"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-
-
-
-                        </tr>
-
-                        <tr>
-                            <th scope="row">Holiday</th>
-
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Holiday[]" id="holidaySun"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0"  name="Holiday[]" id="holidayMon"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Holiday[]" id="holidayTue"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0"  name="Holiday[]" id="holidayWed"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Holiday[]" id="holidayThu"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0"  name="Holiday[]" id="holidayFri"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0"  name="Holiday[]" id="holidaySat"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-
-
-
-                        </tr>
-
-                        <tr>
-                            <th scope="row">Unpaid</th>
-
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Unpaid[]" id="unpaidSun"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Unpaid[]" id="unpaidMon"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Unpaid[]" id="unpaidTue"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Unpaid[]" id="unpaidWed"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Unpaid[]" id="unpaidThu"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Unpaid[]" id="unpaidFri"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="Unpaid[]" id="unpaidSat"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-
-
-
-                        </tr>
-
-                        <tr>
-                            <th scope="row">other</th>
-
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0" name="other[]" id="otherSun"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0"  name="other[]" id="otherMon"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0"  name="other[]" id="otherTue"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0"  name="other[]" id="otherWed"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0"  name="other[]" id="otherThu"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0"  name="other[]" id="otherFri"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" value="0"  name="other[]" id="otherSat"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-
-
-
-
-                        </tr>
-
-                        <tr>
-                            <th scope="row">Total</th>
-                            <td>
-                                <div style="padding:2px"><input type="text" name="Total[]" id="sun"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" name="Total[]" id="mon"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" name="Total[]" id="tue"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" name="Total[]" id="wed"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" name="Total[]" id="thu"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" name="Total[]" id="fri"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-                            <td>
-                                <div style="padding:2px"><input type="text" name="Total[]" id="sat"
-                                        style="width:60px;text-align:center;border:none">
-                                </div>
-                            </td>
-
-
-                        </tr>
+    <br><br><br>
 
 
 
 
 
+    <form action="sample" method="POST">
+        @csrf
+
+        <div style="float: right; margin-top:-2%; margin-right:10%;">
 
 
-                    </tbody>
-                </table>
-
-
+            <div style="display: flex">
+                <label for="Name" style="font-size: 18px; font-weight:600;margin-left:15%; ">Name :</label>
+                <h6 style="margin-left:5%">{{ Auth::user()->name }}</h6>
             </div>
-
-            <br><br>
-
-            <div class="text-center">
-
-                <label style="font-size:20px; font-weight:600;">Total Hours reported: <input id="sum"
-                        type="text" style="font-size:20px; width:20%; padding-left: 2%;"> </label>
-
-                <button id="submit" class="btn btn-success">Submit</button>
-
+  
+            <div style="display: flex">
+                <label for="EmpId" style="font-size: 18px; font-weight:600;margin-top:3%; ">Employe Id :</label>
+                <input type="text" name="empid" style="margin-top: 3%; " placeholder="Enter Employe Id" required>
             </div>
-            <br><br>
-
-        </form>
 
         </div>
-    </div>
+
+        <br><br><br>
+
+        <div class="row">
+
+            <div class="col-md-3" style="margin-left: 5%">
+                <br><br><br><br>
+                <div id="weekpicker"></div>
+
+            </div>
+
+
+            <div class="col-md-8">
+
+                <div class="table-responsive">
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+
+                                <th scope="col">
+                                    <div style="padding:2px"><input type="text" name="Date[]" id="start"
+                                            style="width:85px;text-align:center;border:none">
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div style="padding:2px"><input type="text" name="Date[]" id="two"
+                                            style="width:85px;text-align:center;border:none">
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div style="padding:2px"><input type="text" name="Date[]" id="three"
+                                            style="width:85px;text-align:center;border:none">
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div style="padding:2px"><input type="text" name="Date[]" id="four"
+                                            style="width:85px;text-align:center;border:none">
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div style="padding:2px"><input type="text" name="Date[]" id="five"
+                                            style="width:85px;text-align:center;border:none">
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div style="padding:2px"><input type="text" name="Date[]" id="six"
+                                            style="width:85px;text-align:center;border:none">
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div style="padding:2px"><input type="text" name="Date[]" id="end"
+                                            style="width:85px;text-align:center;border:none">
+                                    </div>
+                                </th>
+                            </tr>
+
+                            <tr>
+                                <th></th>
+                                <th scope="col">Sun</th>
+                                <th scope="col">Mon</th>
+                                <th scope="col">Tue</th>
+                                <th scope="col">Wed</th>
+                                <th scope="col">Thur</th>
+                                <th scope="col">Fri</th>
+                                <th scope="col">Sat</th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Regular</th>
+                                <td>
+                                    <div style="padding:2px"><input type="text" name="Regular[]" id="regularSun"
+                                            style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" name="Regular[]" id="regularMon"
+                                            style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" name="Regular[]" id="regularTue"
+                                            style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" name="Regular[]" id="regularWed"
+                                            style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" name="Regular[]" id="regularThu"
+                                            style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" name="Regular[]" id="regularFri"
+                                            style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" name="Regular[]" id="regularSat"
+                                            style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th scope="row">Overtime</th>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Overtime[]"
+                                            id="overTimeSun" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div style="padding:2px">
+                                        <input type="text" name="Overtime[]" value="0" id="overTimeMon"
+                                            style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Overtime[]"
+                                            id="overTimeTue" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Overtime[]"
+                                            id="overTimeWed" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Overtime[]"
+                                            id="overTimeThu" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Overtime[]"
+                                            id="overTimeFri" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Overtime[]"
+                                            id="overTimeSat" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th scope="row">Sick</th>
+
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Sick[]"
+                                            id="sickSun" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Sick[]"
+                                            id="sickMon" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Sick[]"
+                                            id="sickTue" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Sick[]"
+                                            id="sickWed" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Sick[]"
+                                            id="sickThu" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Sick[]"
+                                            id="sickFri" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Sick[]"
+                                            id="sickSat" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th scope="row">Vacation</th>
+
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Vacation[]"
+                                            id="vacationSun" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Vacation[]"
+                                            id="vacationMon" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Vacation[]"
+                                            id="vacationTue" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Vacation[]"
+                                            id="vacationWed" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Vacation[]"
+                                            id="vacationThu" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Vacation[]"
+                                            id="vacationFri" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Vacation[]"
+                                            id="vacationSat" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+
+
+
+                            </tr>
+
+                            <tr>
+                                <th scope="row">Holiday</th>
+
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Holiday[]"
+                                            id="holidaySun" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Holiday[]"
+                                            id="holidayMon" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Holiday[]"
+                                            id="holidayTue" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Holiday[]"
+                                            id="holidayWed" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Holiday[]"
+                                            id="holidayThu" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Holiday[]"
+                                            id="holidayFri" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Holiday[]"
+                                            id="holidaySat" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+
+
+
+                            </tr>
+
+                            <tr>
+                                <th scope="row">Unpaid</th>
+
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Unpaid[]"
+                                            id="unpaidSun" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Unpaid[]"
+                                            id="unpaidMon" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Unpaid[]"
+                                            id="unpaidTue" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Unpaid[]"
+                                            id="unpaidWed" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Unpaid[]"
+                                            id="unpaidThu" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Unpaid[]"
+                                            id="unpaidFri" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="Unpaid[]"
+                                            id="unpaidSat" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+
+
+
+                            </tr>
+
+                            <tr>
+                                <th scope="row">other</th>
+
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="other[]"
+                                            id="otherSun" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="other[]"
+                                            id="otherMon" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="other[]"
+                                            id="otherTue" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="other[]"
+                                            id="otherWed" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="other[]"
+                                            id="otherThu" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="other[]"
+                                            id="otherFri" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" value="0" name="other[]"
+                                            id="otherSat" style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+
+
+
+
+                            </tr>
+
+                            <tr>
+                                <th scope="row">Total</th>
+                                <td>
+                                    <div style="padding:2px"><input type="text" name="Total[]" id="sun"
+                                            style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" name="Total[]" id="mon"
+                                            style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" name="Total[]" id="tue"
+                                            style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" name="Total[]" id="wed"
+                                            style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" name="Total[]" id="thu"
+                                            style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" name="Total[]" id="fri"
+                                            style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="padding:2px"><input type="text" name="Total[]" id="sat"
+                                            style="width:60px;text-align:center;border:none">
+                                    </div>
+                                </td>
+
+
+                            </tr>
+
+
+
+
+
+
+
+                        </tbody>
+                    </table>
+
+
+                </div>
+
+                <br><br>
+
+                <div class="text-center">
+
+                    <label style="font-size:20px; font-weight:600;">Total Hours reported: <input id="sum"
+                            type="text" style="font-size:20px; width:20%; padding-left: 2%;"> </label>
+
+                    <button id="submit" class="btn btn-success">Submit</button>
+
+                </div>
+                <br><br>
+            </div>
+        </div>
+    </form>
+
+   
 
 
 </body>
@@ -525,8 +579,6 @@
 </html>
 
 <script>
-
-    
     var btn = document.getElementById('submit');
 
     btn.addEventListener("click", sunday);
@@ -542,9 +594,10 @@
 
     //Sunday Data
     document.getElementById('regularSun').value = '0';
+
     function sunday() {
 
-  
+
         document.getElementById('overTimeSun').value;
         document.getElementById('sickSun').value;
         document.getElementById('vacationSun').value;
@@ -610,7 +663,7 @@
 
     function thuesday() {
 
-      
+
 
         document.getElementById('overTimeTue').value;
         document.getElementById('sickTue').value;
@@ -644,7 +697,7 @@
 
     function wednesday() {
 
-      
+
         document.getElementById('overTimeWed').value;
         document.getElementById('sickWed').value;
         document.getElementById('vacationWed').value;
@@ -677,7 +730,7 @@
 
     function thursday() {
 
-      
+
         document.getElementById('overTimeThu').value;
         document.getElementById('sickThu').value;
         document.getElementById('vacationThu').value;
@@ -710,7 +763,7 @@
 
     function friday() {
 
-      
+
         document.getElementById('overTimeFri').value;
         document.getElementById('sickFri').value;
         document.getElementById('vacationFri').value;
@@ -786,7 +839,7 @@
             Saturday + Sunday;
 
     }
-   
+
 
 
     //Total Data

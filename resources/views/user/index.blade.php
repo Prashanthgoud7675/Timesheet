@@ -133,6 +133,7 @@
         <a href="employee">
             <select style="background-color:#002F6C; color:white;margin-top:2%; margin-bottom:2%; margin-left:2%">
                 <option value="Company List"> Employees </option>
+                
             </select>
         </a>
 

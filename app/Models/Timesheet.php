@@ -11,5 +11,5 @@ class Timesheet extends Model
 
     protected $table = "timesheets";
 
-    protected $fillable = ['Date','Regular','Overtime','Sick','Vacation','Holiday','Unpaid','other','Total','TotalHours'];
+    protected $fillable = ['empid','Date','Regular','Overtime','Sick','Vacation','Holiday','Unpaid','other','Total','TotalHours'];
 }

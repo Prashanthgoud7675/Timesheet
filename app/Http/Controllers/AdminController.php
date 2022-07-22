@@ -14,11 +14,11 @@ class AdminController extends Controller
 
 
      $data = Companies::where([
-        ['Client_ID' , '!=' , Null],
+        
         ['Company_Name' , '!=' , Null],
         [function ($query) use ($request){
             if(($term = $request->term)){
-                $query->orWhere('Client_ID',  'LIKE' , '%' . $term . '%')->get();
+          
                 $query->orWhere('Company_Name',  'LIKE' , '%' . $term . '%')->get();
   
             }
@@ -36,5 +36,10 @@ class AdminController extends Controller
            return view('admin.index', ['data' => $data])
                  ->with('i', (request()->input('page', 1 ) - 1) * 5);
     }
+
+ 
+    }
+
+
    
-}
+

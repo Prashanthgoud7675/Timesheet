@@ -13,7 +13,7 @@ class Companies extends Model
 
     protected $fillable=[
 
-        'Client_ID', 'Branch_Code', 'Company_Name','Company_Address','Next_Check_Date','Status'
+         'Company_Code', 'Company_Name','Company_Address','Next_Check_Date','Status'
 
     ];
 
