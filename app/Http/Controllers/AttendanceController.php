@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Attendance;
 use App\Models\WeekData;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use DB;
 
 class AttendanceController extends Controller
@@ -16,8 +17,15 @@ class AttendanceController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
+        $data = DB::table('timesheets')->where('empid', $user->empid)->get();
+        return view('attendances.index', compact('user', 'data'));
+
+        /*
+
         $data = WeekData::all();
         return view('attendances.index', compact('data') );
+        */
     }
 
     /**

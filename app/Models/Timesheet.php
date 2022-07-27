@@ -11,5 +11,15 @@ class Timesheet extends Model
 
     protected $table = "timesheets";
 
-    protected $fillable = ['empid','Date','Regular','Overtime','Sick','Vacation','Holiday','Unpaid','other','Total','TotalHours'];
+    protected $fillable = ['empid', 'Date', 'Regular', 'Overtime', 'Sick', 'Vacation', 'Holiday', 'Unpaid', 'other', 'Total', 'TotalHours'];
+
+    protected $uniqueKey = 'empid';
+
+    public $incrementing = false;
+
+    protected $keyType = 'string';
+    public function user()
+    {
+        return $this->belongsTo('\App\Models\User', 'empid', 'empid');
+    }
 }

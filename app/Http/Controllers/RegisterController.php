@@ -31,13 +31,15 @@ class RegisterController extends Controller
 
             'name' => 'required|max:150',
             'Companyname' => 'required|max:150',
+            'empid' => 'required|max:50',
             'email' => 'required|email|max:150',
-            
             'password' => 'required|confirmed'
         ]);
 
         $name = $request->name;
+   
         $Companyname = $request->Companyname;
+        $empid = $request->empid;
         $email = $request->email;
         $password  = Hash::make($request->password);
        
@@ -49,6 +51,7 @@ class RegisterController extends Controller
         $q->user_Id = $user_Id;
         $q->name = $name;
         $q->Companyname = $Companyname;
+        $q->empid = $empid;
         $q->email = $email;
         $q->password = $password;
    

@@ -20,8 +20,10 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'Companyname',
+        'empid',
         'email',
         'role',
+
         'password',
     ];
 
@@ -45,5 +47,10 @@ class User extends Authenticatable
     ];
 
 
-    protected $table="users";
+    protected $table = "users";
+
+    public function timsheets()
+    {
+        return $this->hasMany('\App\Models\Timesheet', 'empid', 'empid');
+    }
 }

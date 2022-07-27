@@ -23,6 +23,7 @@ use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\TimesheetController;
 use App\Http\Controllers\WeekDataController;
 use App\Http\Controllers\CompanyEmployesController;
+use App\Http\Controllers\ProdController;
 
 
 /*
@@ -46,6 +47,10 @@ Route::get('sample', function () {
     return view('sample');
 });
 
+
+Route::get('hello', function () {
+    return view('hello');
+});
 
 
 Route::get('dashboard', function () {
@@ -117,3 +122,8 @@ Route::get('/sample', [TimesheetController::class, 'index']);
 Route::post('/sample', [TimesheetController::class, 'store']);
 
 Route::get('filter', [CompanyEmployesController::class, 'filterProduct'])->name('filter');
+
+Route::get('/hello', [ProdController::class, 'index']);
+Route::post('/hello', [ProdController::class, 'search']);
+
+

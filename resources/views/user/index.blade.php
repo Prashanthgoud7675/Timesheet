@@ -126,9 +126,12 @@
         <select style="background-color:#002F6C; color:white;margin-top:2%; margin-bottom:2%; margin-left:3%">
             <option value="Company List">Company List</option>
         </select>
+
+        <a href="hello">
         <select style="background-color:#002F6C; color:white;margin-top:2%; margin-bottom:2%; margin-left:2%">
             <option value="Company List">Home</option>
         </select>
+    </a>
 
         <a href="employee">
             <select style="background-color:#002F6C; color:white;margin-top:2%; margin-bottom:2%; margin-left:2%">

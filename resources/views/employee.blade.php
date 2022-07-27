@@ -209,7 +209,7 @@
                
                         <tr>
                          
-                          <td style="font-size:17px; color:rgb(133, 125, 125)">{{$i->Last_Name}},{{$i->First_Name}}</td>
+                          <td style="font-size:17px; color:rgb(133, 125, 125)">{{$i->First_Name}} {{$i->Last_Name}}</td>
                           <td style="font-size:17px; color:rgb(133, 125, 125)">{{$i->Registration}}</td>
                           <td style=" font-size:17px; color:rgb(133, 125, 125)"> {{$i->Paperless}}</td>
                           <td style="font-size:17px; color:rgb(133, 125, 125)">{{$i->contact_info}}</td>

@@ -165,62 +165,6 @@
                         @endforeach
                     </tr>
 
-                    <tr>
-                        <th scope="row">Regular</th>
-
-                        @foreach ( $data as $i)
-                            <td>{{$i->Overtime}}</td>
-                        @endforeach
-                    </tr>
-
-                    <tr>
-                        <th scope="row">Regular</th>
-
-                        @foreach ( $data as $i)
-                            <td>{{$i->Sick}}</td>
-                        @endforeach
-                    </tr>
-
-                    <tr>
-                        <th scope="row">Regular</th>
-
-                        @foreach ( $data as $i)
-                            <td>{{$i->Vacation}}</td>
-                        @endforeach
-                    </tr>
-
-                    <tr>
-                        <th scope="row">Regular</th>
-
-                        @foreach ( $data as $i)
-                            <td>{{$i->Holiday}}</td>
-                        @endforeach
-                    </tr>
-
-                    <tr>
-                        <th scope="row">Regular</th>
-
-                        @foreach ( $data as $i)
-                            <td>{{$i->Unpaid}}</td>
-                        @endforeach
-                    </tr>
-
-                    <tr>
-                        <th scope="row">Regular</th>
-
-                        @foreach ( $data as $i)
-                            <td>{{$i->other}}</td>
-                        @endforeach
-                    </tr>
-
-                    <tr>
-                        <th scope="row">Regular</th>
-
-                        @foreach ( $data as $i)
-                            <td>{{$i->Total}}</td>
-                        @endforeach
-                    </tr>
-
 
                     <tr>
                         <th>Actions</th>
