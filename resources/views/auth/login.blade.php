@@ -25,8 +25,10 @@
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&family=Montserrat&family=Quintessential&family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&family=Montserrat&family=Quintessential&family=Ubuntu+Mono&display=swap"
+        rel="stylesheet">
 
 </head>
 
@@ -34,16 +36,17 @@
 
 
     <div class="row justify-content-center" style="font-family: 'Montserrat', sans-serif;">
-        
 
-        <div class="col-md-6" style="margin-top: 9%;background-color:white;width:500px;margin-bottom:5%;border-radius:10px; box-shadow: 0px 10px 50px rgba(180, 174, 174, 0.7);">
-            <div class="" style="padding-top:4%;padding-bottom:4%;border-radius:25px">
+
+        <div class="col-md-6"
+            style="margin-top: 9%;background-color:white;width:500px;margin-bottom:5%;border-radius:10px; box-shadow: 0px 10px 50px rgba(180, 174, 174, 0.7);">
+            <div style="padding-top:4%;padding-bottom:4%;border-radius:25px">
                 <div class="flex justify-center">
                     <h1 style="font-size:20px;font-weight:700">Welcome!</h1>
                 </div>
                 <br>
                 <div class="flex justify-center" style="margin-top: 0%">
-                    <div class="w-6/12    rounded-lg">
+                    <div class="w-9/12    rounded-lg">
 
 
                         @if (session('status'))
@@ -53,10 +56,10 @@
                         @endif
 
                         @if (session('message'))
-                        <div class="alert alert-success-500 p-4 rounded-lg mb-6 text-white text-center">
-                            {{ session('message') }}
-                        </div>
-                    @endif
+                            <div class="alert alert-success-500 p-4 rounded-lg mb-6 text-white text-center">
+                                {{ session('message') }}
+                            </div>
+                        @endif
 
                         @if ($message = Session::get('success'))
                             <div class="alert alert-success" style="width: 375px;  ">
@@ -70,10 +73,10 @@
 
 
                             <div class="mb-4">
-                                <label >User Id</label>
-                                <input type="text" name="email" id="email" placeholder="User ID"
+                                <label>User Id</label>
+                                <input type="text" placeholder="Enter Email Id" name="email" id="email"
                                     class="bg-gray-100 border-2 w-full p-2 rounded-lg @error('email') border-red-500 @enderror"
-                                    value="{{ old('email') }} " style="width:300px">
+                                    value="{{ old('email') }} ">
 
                                 @error('email')
                                     <div class="text-red-500 mt-2 text-sm">
@@ -81,12 +84,12 @@
                                     </div>
                                 @enderror
                             </div>
-                          
+
                             <div class="mb-4">
-                                <label  >Password</label>
+                                <label>Password</label>
                                 <input type="password" name="password" id="password" placeholder="Enter password"
                                     class="bg-gray-100 border-2 w-full p-2 rounded-lg @error('password') border-red-500 @enderror"
-                                    value="" style="width:300px">
+                                    value="">
 
                                 @error('password')
                                     <div class="text-red-500 mt-2 text-sm">
@@ -94,59 +97,65 @@
                                     </div>
                                 @enderror
                             </div>
-                           
+
 
 
                             <div class="flex justify-center">
-                                <button type="submit"
-                                    class="bg-blue-500 text-white px-2 py-2 rounded font-medium w-35" style="background-color:#052CA3"> <a > SIGN IN </a> </button>
-                           
-                                    </div>
+                                <button type="submit" class="bg-blue-500 text-white px-2 py-2 rounded font-medium w-35"
+                                    style="background-color:#052CA3"> <a> SIGN IN </a> </button>
+
+                            </div>
                             <br>
 
-                            <input type="checkbox" name="remember" style="margin-bottom:15px;margin-left:3%"> Remember My User ID <i class="fa fa-question-circle"></i>
+                            <input type="checkbox" name="remember" style="margin-bottom:15px;margin-left:3%"> Remember
+                            My User ID <i class="fa fa-question-circle"></i>
 
                             <br>
-                        
 
-                            
+
+
                             <div class="flex justify-center">
-                               
 
-                            
 
-                            <h1 style="color:#052CA3;font-size:20px;font-weight:600">Forgot Your Password?</h1>
+
+
+                                <h1 style="color:#052CA3;font-size:20px;font-weight:600">Forgot Your Password?</h1>
 
                             </div>
 
                             <br>
-                           
+
                         </form>
 
                     </div>
                 </div>
 
-                <hr style="height:2px;width:350px;margin-left:40px">
+                <hr style="height:2px;">
 
-<br>
-<div class="flex justify-center">
+                <br>
+                <div class="flex justify-center">
 
-                          <h1 class="text-center" style="font-size: 17px; font-weight:600; margin-top: 1%; margin-bottom:4%;color:black;text-decoration:underline"> New User?</h1> 
-                            <i class="fa fa-user-plus" style="color:#052CA3;margin-left:1%;margin-top:1%">     <a href="{{ route('register') }}" style="font-family: 'Montserrat', sans-serif;font-size:17px" > Create Account</a> </i>
+                    <h1 class="text-center"
+                        style="font-size: 17px; font-weight:600; margin-top: 1%; margin-bottom:4%;color:black;text-decoration:underline">
+                        New User?</h1>
+                    <i class="fa fa-user-plus" style="color:#052CA3;margin-left:1%;margin-top:1%"> <a
+                            href="{{ route('register') }}" style="font-family: 'Montserrat', sans-serif;font-size:17px">
+                            Create Account</a> </i>
 
-</div>
-<br>
-<hr style="height:2px;width:350px;margin-left:40px">
-<br>
+                </div>
+                <br>
+                <hr style="height:2px;">
+                <br>
 
-<h1 style="font-weight:700;margin-left:5%">Not a Client yet?</h1>
-<p style="padding:20px"> RUN Powered  helps you manage your payroll,people, and benefits from anywhere. So you can spend more time growing your business.</p>
-<h1 style="float:right;margin-right:5%;color:#052CA3">Learn More<i class="fa fa-angle-right"></i></h1>
-<br><br>
+                <h1 style="font-weight:700;margin-left:5%">Not a Client yet?</h1>
+                <p style="padding:20px"> RUN Powered helps you manage your payroll,people, and benefits from anywhere.
+                    So you can spend more time growing your business.</p>
+                <h1 style="float:right;margin-right:5%;color:#052CA3">Learn More<i class="fa fa-angle-right"></i></h1>
+                <br><br>
             </div>
         </div>
     </div>
-   
+
 </body>
 
 </html>

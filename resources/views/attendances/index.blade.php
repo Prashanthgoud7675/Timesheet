@@ -33,10 +33,124 @@
                 });
             }
 
+            /*
+            $("#start").datepicker({
+                numberOfMonths: 1,
+                changeYear: true,
+                changeMonth: true,
+                showOtherMonths: true,
+                onSelect:function(selectedDate, instance) {
+                var dateFormat = "yy/mm/dd";
+                $("#start").val($.datepicker);
+
+                }
+                
+            });
+
+            */
+
+
+            $("#start").datepicker({
+                changeYear: true,
+                changeMonth: true,
+                showOtherMonths: true,
+                selectOtherMonths: true,
+                onSelect: function(selectedDate, instance) {
+
+
+                    var myDate = new Date(selectedDate);
+
+
+                    weekStart = new Date(myDate.getFullYear(), myDate.getMonth(), myDate.getDate());
+
+
+                    
+
+
+
+                    var dateFormat = "yy/mm/dd";
+                    $("#start").val($.datepicker.formatDate(dateFormat, weekStart));
+                   
+          
+
+                    
+
+                },
+                beforeShowDay: function(date) {
+                    var cssClass = "";
+                    if (date >= weekStart && date <= weekEnd)
+                        cssClass = "ui-datepicker-current-day";
+                    return [true, cssClass];
+                },
+                onChangeMonthYear: function() {
+                    completeWeek();
+                }
+
+
+            });
+
+
+            
+            $("#end").datepicker({
+                changeYear: true,
+                changeMonth: true,
+                showOtherMonths: true,
+                selectOtherMonths: true,
+                onSelect: function(selectedDate, instance) {
+
+
+                    var myDate = new Date(selectedDate);
+
+
+                    weekEnd = new Date(myDate.getFullYear(), myDate.getMonth(), myDate.getDate());
+
+
+                    
+
+
+
+                    var dateFormat = "yy/mm/dd";
+                    $("#end").val($.datepicker.formatDate(dateFormat, weekEnd));
+                   
+          
+
+                    
+
+                },
+                beforeShowDay: function(date) {
+                    var cssClass = "";
+                    if (date >= weekStart && date <= weekEnd)
+                        cssClass = "ui-datepicker-current-day";
+                    return [true, cssClass];
+                },
+                onChangeMonthYear: function() {
+                    completeWeek();
+                }
+
+
+            });
+
+            /*
+
+            $("#end").datepicker({
+                numberOfMonths: 1,
+                changeYear: true,
+                changeMonth: true,
+                showOtherMonths: true,
+                
+            });
+
+            */
+
+
+
 
 
 
             $("#weekpicker").datepicker({
+
+                changeYear: true,
+                changeMonth: true,
                 showOtherMonths: true,
                 selectOtherMonths: true,
                 onSelect: function(selectedDate, instance) {
@@ -98,7 +212,24 @@
 
     <br><br><br>
 
-    <form action="{{url('hello')}}" method="POST">
+    <div style="float: right; margin-top:-2%; margin-right:11%;">
+
+
+        <div style="display: flex">
+            <label for="Name" style="font-size: 18px; font-weight:600; ">Name :</label>
+            <h6 style="margin-top:1%;">{{ Auth::user()->name }}</h6>
+        </div>
+
+        <div style="display: flex">
+            <label for="EmpId" style="font-size: 18px; font-weight:600;margin-top:3%; ">Employe Id :</label>
+            <h6 style="margin-left:3%;margin-top:5%;">{{ Auth::user()->empid }}</h6>
+        </div>
+
+    </div>
+    <br><br>
+    <br>
+
+    <form action="{{url('attendances')}}" method="POST">
         @csrf
 
 
@@ -110,18 +241,18 @@
                         <div class="col">
                             <div class="form-floating mb-4">
                                 <input type="text" class="form-control" id="start"
-                                    placeholder="Start Date(YYYY/MM/DD)" name="fromDate"
+                                    placeholder="Start Date" name="fromDate"
                                     style= "font-size:15px; height:50px" required>
-                                <label for="Start Date(YYYY/MM/DD)">StartDate(YYYY/MM/DD)</label>
+                                <label for="Start Date">StartDate</label>
                             </div>
                         </div>
         
                         <div class="col">
                             <div class="form-floating  mb-4">
                                 <input type="text" class="form-control" id="end"
-                                    placeholder="End Date(YYYY/MM/DD)" name="toDate"
+                                    placeholder="End Date" name="toDate"
                                     style=" font-size:15px;height:50px" required>
-                                <label for="End Date(YYYY/MM/DD)">EndDate(YYYY/MM/DD)</label>
+                                <label for="End Date">EndDate</label>
                             </div>
                         </div>
                     </div>
@@ -166,7 +297,7 @@
                     </tr>
 
                     <tr>
-                        <th scope="row">Regular</th>
+                        <th scope="row">OverTime</th>
 
                         @foreach ( $data as $i)
                             <td>{{$i->Overtime}}</td>
@@ -174,7 +305,7 @@
                     </tr>
 
                     <tr>
-                        <th scope="row">Regular</th>
+                        <th scope="row">Sick</th>
 
                         @foreach ( $data as $i)
                             <td>{{$i->Sick}}</td>
@@ -182,7 +313,7 @@
                     </tr>
 
                     <tr>
-                        <th scope="row">Regular</th>
+                        <th scope="row">Vacation</th>
 
                         @foreach ( $data as $i)
                             <td>{{$i->Vacation}}</td>
@@ -190,7 +321,7 @@
                     </tr>
 
                     <tr>
-                        <th scope="row">Regular</th>
+                        <th scope="row">Holiday</th>
 
                         @foreach ( $data as $i)
                             <td>{{$i->Holiday}}</td>
@@ -198,7 +329,7 @@
                     </tr>
 
                     <tr>
-                        <th scope="row">Regular</th>
+                        <th scope="row">Unpaid</th>
 
                         @foreach ( $data as $i)
                             <td>{{$i->Unpaid}}</td>
@@ -206,7 +337,7 @@
                     </tr>
 
                     <tr>
-                        <th scope="row">Regular</th>
+                        <th scope="row">Other</th>
 
                         @foreach ( $data as $i)
                             <td>{{$i->other}}</td>
@@ -214,7 +345,7 @@
                     </tr>
 
                     <tr>
-                        <th scope="row">Regular</th>
+                        <th scope="row">Total</th>
 
                         @foreach ( $data as $i)
                             <td>{{$i->Total}}</td>

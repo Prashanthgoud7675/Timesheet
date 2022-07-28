@@ -43,6 +43,16 @@
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
 
+    <style>
+        .dropdown-item:hover{
+
+            background-color: #002F6C;
+            color: white;
+            text-decoration: none;
+
+        }
+    </style>
+
 
 
 
@@ -122,23 +132,30 @@
   
 
         <hr style="width: 88%; margin-left: 5%">
+        <br>
 
-        <select style="background-color:#002F6C; color:white;margin-top:2%; margin-bottom:2%; margin-left:3%">
-            <option value="Company List">Company List</option>
-        </select>
+        <div class="flex" style="display: flex">
 
-        <a href="hello">
-        <select style="background-color:#002F6C; color:white;margin-top:2%; margin-bottom:2%; margin-left:2%">
-            <option value="Company List">Home</option>
-        </select>
-    </a>
+            <ul style="  display: flex; justify-content:space-around; list-style-type:none;">
 
-        <a href="employee">
-            <select style="background-color:#002F6C; color:white;margin-top:2%; margin-bottom:2%; margin-left:2%">
-                <option value="Company List"> Employees </option>
-                
-            </select>
-        </a>
+                <li style=" list-style:none; margin-left:10rem; margin-top:5%" > <a href="onboard" style=" color:white; text-decoration:none"> Onboard </a> </li>
+
+
+
+            </ul>  
+            
+            <div class="dropdown" style="margin-left: 3%;">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:#002F6C; color:white;margin-top:2%; margin-bottom:2%; margin-left:2%">
+                  Timesheet
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+                  <a class="dropdown-item" href="sample">Add Timesheet</a>
+                  <a class="dropdown-item" href="attendances">View Timesheet</a>
+
+                </div>
+              </div>
+        
+        </div>
 
         <br>
     <br>
@@ -180,7 +197,7 @@
                     <br>
                     <div>
                         <input type="text" name="term" placeholder="Search a report" id="term"
-                            style="height:40px;background-color: whitesmoke;border-radius: 20px;width:370px">
+                            style="height:40px;background-color: whitesmoke;border-radius: 20px;width:370px; padding:20px">
                     </div>
                 </div>
                 <br>

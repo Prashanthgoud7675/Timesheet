@@ -46,6 +46,6 @@ class TimesheetController extends Controller
 
       
 
-        return redirect('/attendances');
+        return redirect('/user');
     }
 }

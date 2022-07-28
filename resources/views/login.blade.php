@@ -71,7 +71,7 @@
 
                             <div class="mb-4">
                                 <label >User Id</label>
-                                <input type="text" name="email" id="email" placeholder="User ID"
+                                <input type="text" name="email" id="email" placeholder=" Email Id"
                                     class="bg-gray-100 border-2 w-full p-2 rounded-lg @error('email') border-red-500 @enderror"
                                     value="{{ old('email') }} " style="width:300px">
 
