@@ -178,7 +178,7 @@
                     
 
                     <button type="submit" name="filter" id="filter" class="btn btn-success "
-                        style="font-size: 20px; margin-left:80%; width:12%; margin-bottom:2%">Find</button>
+                        style="font-size: 20px; margin-left:70%; width:18%; margin-bottom:2%">Find</button>
                 
                     
 

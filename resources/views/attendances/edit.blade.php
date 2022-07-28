@@ -52,7 +52,7 @@
     <div class="col-lg-12 " style="margin-left:7%">
        
         <div >
-            <a class="btn btn-primary" href="{{ route('admin') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('user') }}"> Back</a>
         </div>
     </div>
 </div>
@@ -78,39 +78,39 @@
     <br><br>
     <div class="form-group" style="margin-left:5%">
                <label for="Client_ID">Date</label>
-              <input type="text" class="form-control" name="Date" style="width:400px;" value="{{$attendance->Date}}"/>
+              <input type="text" class="form-control" name="Date"  value="{{$attendance->Date}}"/>
           </div>
           <div class="form-group" style="margin-left:5%">
               <label for="Branch_Code">Regular</label>
-              <input type="text" class="form-control" name="Regular" style="width:400px" id="regular" oninput="timesheet()"  value="{{$attendance->Regular}}"/>
+              <input type="text" class="form-control" name="Regular"  id="regular" oninput="timesheet()"  value="{{$attendance->Regular}}"/>
           </div>
           <div class="form-group" style="margin-left:5%">
               <label for="Company_Name">OverTime</label>
-              <input type="text" class="form-control" name="Overtime" style="width:400px" id="overtime" oninput="timesheet()"   value="{{$attendance->Overtime}}"/>
+              <input type="text" class="form-control" name="Overtime"  id="overtime" oninput="timesheet()"   value="{{$attendance->Overtime}}"/>
           </div>
           <div class="form-group" style="margin-left:5%">
               <label for="Company_Address">Sick</label>
-              <input type="text" class="form-control" name="Sick" style="width:400px" id="sick" oninput="timesheet()"   value="{{$attendance->Sick}}"  />
+              <input type="text" class="form-control" name="Sick"  id="sick" oninput="timesheet()"   value="{{$attendance->Sick}}"  />
           </div>
           <div class="form-group" style="margin-left:5%">
               <label for="Next_Check_Date">Vacation</label>
-              <input type="text" class="form-control" name="Vacation" style="width:400px" id="vacation" oninput="timesheet()"   value="{{$attendance->Vacation}}"/>
+              <input type="text" class="form-control" name="Vacation"  id="vacation" oninput="timesheet()"   value="{{$attendance->Vacation}}"/>
           </div>
           <div class="form-group" style="margin-left:5%">
               <label for="Status">Holiday</label>
-              <input type="text" class="form-control" name="Holiday" style="width:400px" id="holiday" oninput="timesheet()"   value="{{$attendance->Holiday}}"/>
+              <input type="text" class="form-control" name="Holiday"  id="holiday" oninput="timesheet()"   value="{{$attendance->Holiday}}"/>
           </div>
           <div class="form-group" style="margin-left:5%">
             <label for="Status">Unpaid</label>
-            <input type="text" class="form-control" name="Unpaid" style="width:400px" id="unpaid" oninput="timesheet()"   value="{{$attendance->Unpaid}}"/>
+            <input type="text" class="form-control" name="Unpaid"  id="unpaid" oninput="timesheet()"   value="{{$attendance->Unpaid}}"/>
         </div>
         <div class="form-group" style="margin-left:5%">
             <label for="Status">Other</label>
-            <input type="text" class="form-control" name="other" style="width:400px" id="other" oninput="timesheet()"   value="{{$attendance->other}}"/>
+            <input type="text" class="form-control" name="other"  id="other" oninput="timesheet()"   value="{{$attendance->other}}"/>
         </div>
         <div class="form-group" style="margin-left:5%">
             <label for="Status">Total</label>
-            <input type="text" class="form-control" name="Total" style="width:400px" id="total" value="{{$attendance->Total}}"/>
+            <input type="text" class="form-control" name="Total"  id="total" value="{{$attendance->Total}}"/>
         </div>
           <br>
           <button type="submit" class="btn btn-primary" style="margin-left:5%">Submit</button>

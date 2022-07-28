@@ -234,7 +234,7 @@
 
 
         <div class="row">
-            <div class="col-md-5"></div>
+            <div class="col-md-4"></div>
             <div class="col-md-7">
                 <div style="display:flex;">
                     <div class="row ">
@@ -256,7 +256,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-success" type="submit" name="search" style="width: 12%; height:50px; margin-left:3%">submit</button>
+                    <button class="btn btn-success" type="submit" name="search" style="width: 21%; height:50px; margin-left:3%">submit</button>
                 </div>
             </div>
         </div>
