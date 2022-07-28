@@ -23,7 +23,7 @@ use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\TimesheetController;
 use App\Http\Controllers\WeekDataController;
 use App\Http\Controllers\CompanyEmployesController;
-use App\Http\Controllers\ProdController;
+use App\Http\Controllers\EmpController;
 
 
 /*
@@ -126,4 +126,6 @@ Route::get('filter', [CompanyEmployesController::class, 'filterProduct'])->name(
 Route::get('/hello', [ProdController::class, 'index']);
 Route::post('/hello', [ProdController::class, 'search']);
 
+
+Route::resource('/employe', EmpController::class);
 

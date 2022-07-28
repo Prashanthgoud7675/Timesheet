@@ -82,35 +82,35 @@
           </div>
           <div class="form-group" style="margin-left:5%">
               <label for="Branch_Code">Regular</label>
-              <input type="text" class="form-control" name="Regular" style="width:400px"  value="{{$attendance->Regular}}"/>
+              <input type="text" class="form-control" name="Regular" style="width:400px" id="regular" oninput="timesheet()"  value="{{$attendance->Regular}}"/>
           </div>
           <div class="form-group" style="margin-left:5%">
               <label for="Company_Name">OverTime</label>
-              <input type="text" class="form-control" name="Overtime" style="width:400px" value="{{$attendance->Overtime}}"/>
+              <input type="text" class="form-control" name="Overtime" style="width:400px" id="overtime" oninput="timesheet()"   value="{{$attendance->Overtime}}"/>
           </div>
           <div class="form-group" style="margin-left:5%">
               <label for="Company_Address">Sick</label>
-              <input type="text" class="form-control" name="Sick" style="width:400px" value="{{$attendance->Sick}}"  />
+              <input type="text" class="form-control" name="Sick" style="width:400px" id="sick" oninput="timesheet()"   value="{{$attendance->Sick}}"  />
           </div>
           <div class="form-group" style="margin-left:5%">
               <label for="Next_Check_Date">Vacation</label>
-              <input type="text" class="form-control" name="Vacation" style="width:400px" value="{{$attendance->Vacation}}"/>
+              <input type="text" class="form-control" name="Vacation" style="width:400px" id="vacation" oninput="timesheet()"   value="{{$attendance->Vacation}}"/>
           </div>
           <div class="form-group" style="margin-left:5%">
               <label for="Status">Holiday</label>
-              <input type="text" class="form-control" name="Holiday" style="width:400px" value="{{$attendance->Holiday}}"/>
+              <input type="text" class="form-control" name="Holiday" style="width:400px" id="holiday" oninput="timesheet()"   value="{{$attendance->Holiday}}"/>
           </div>
           <div class="form-group" style="margin-left:5%">
             <label for="Status">Unpaid</label>
-            <input type="text" class="form-control" name="Unpaid" style="width:400px" value="{{$attendance->Unpaid}}"/>
+            <input type="text" class="form-control" name="Unpaid" style="width:400px" id="unpaid" oninput="timesheet()"   value="{{$attendance->Unpaid}}"/>
         </div>
         <div class="form-group" style="margin-left:5%">
             <label for="Status">Other</label>
-            <input type="text" class="form-control" name="other" style="width:400px" value="{{$attendance->other}}"/>
+            <input type="text" class="form-control" name="other" style="width:400px" id="other" oninput="timesheet()"   value="{{$attendance->other}}"/>
         </div>
         <div class="form-group" style="margin-left:5%">
             <label for="Status">Total</label>
-            <input type="text" class="form-control" name="Total" style="width:400px" value="{{$attendance->Total}}"/>
+            <input type="text" class="form-control" name="Total" style="width:400px" id="total" value="{{$attendance->Total}}"/>
         </div>
           <br>
           <button type="submit" class="btn btn-primary" style="margin-left:5%">Submit</button>
@@ -122,3 +122,19 @@
 
 </body>
 </html>
+
+<script>
+    function timesheet() {
+
+      var Regular = document.getElementById("regular").value ;
+      var Overtime = document.getElementById("overtime").value ;
+      var Sick = document.getElementById("sick").value ;
+      var Vacation = document.getElementById("vacation").value ;
+      var Holiday = document.getElementById("holiday").value ;
+      var Unpaid = document.getElementById("unpaid").value ;
+      var Other = document.getElementById("other").value ;
+ 
+
+      document.getElementById("total").value = parseInt(Regular) + parseInt(Overtime) + parseInt(Sick) + parseInt(Vacation) +parseInt(Holiday) + parseInt(Unpaid) + parseInt(Other);
+    }
+  </script>

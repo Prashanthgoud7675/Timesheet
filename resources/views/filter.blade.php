@@ -124,7 +124,7 @@
 </section>
 <br>
 
-<div class="container">
+<div class="container" >
 <div class="row justify-content-center">
     
     <div class="col-md-10"style="background-color:  rgb(212, 212, 215);border-radius:10px;padding-top:2%;padding-bottom:2%;">
@@ -166,8 +166,8 @@
                                 <th>Last Name</th>
                                 <th>Company Name</th>
                                 <th>Registration</th>
-                                <th>Paperless</th>
-                                <th>Contact Info</th>
+                                <th>Mobile Number</th>
+                                <th>Email</th>
                                 <th>Employement Type</th>
                                 <th>Status</th>
                                 <th>Company Code</th>
@@ -182,8 +182,8 @@
                                 <td>{{$product['Last_Name']}}</td>
                                 <td>{{$product['Company_Name']}}</td>
                                 <td>{{$product['Registration']}}</td>
-                                <td>{{$product['Paperless']}}</td>
-                                <td>{{$product['contact_info']}}</td>
+                                <td>{{$product['Mobile_Number']}}</td>
+                                <td>{{$product['Email']}}</td>
                                 <td>{{$product['employment_type']}}</td>
                                 <td>{{$product['Status']}}</td>
                                 <td>{{$product['company_id']}}</td>
